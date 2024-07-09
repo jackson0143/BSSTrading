@@ -1,4 +1,3 @@
-import React from "react";
 
 const ItemCard = ({ option, title, type, onClick, count =0}) => {
     const titlesplitted = title.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');

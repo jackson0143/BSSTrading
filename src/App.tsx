@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import "./App.css";
 import ItemCard from "./components/ItemCard";
 
@@ -265,7 +265,7 @@ function App() {
       },
     };
     setOurItemQuantities(updatedQuantities);
-    console.log(getAllItems());
+
   };
 
   const handleTheirAddItem = ( item, type) => {
@@ -278,7 +278,7 @@ function App() {
       },
     };
     setTheirItemQuantities(updatedQuantities);
-    console.log(getAllItems());
+
   };
 
 
@@ -330,7 +330,7 @@ function App() {
                   type={item.type}
                   title={item.item}
                   count={item.count}
-                  onClick={() => handleRemoveItem(item.item, item.type)}
+                  onClick={()=> console.log("a")}
                 />
               ))
             )}
@@ -344,7 +344,7 @@ function App() {
               <div className="grid place-items-center h-full w-12 text-gray-300 bg-[#565656]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
+                  className="h-6 w-6" 
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -445,7 +445,7 @@ function App() {
                   type={item.type}
                   title={item.item}
                   count={item.count}
-                  onClick={() => handleRemoveItem(item.item, item.type)}
+                  onClick={() =>console.log("hello")}
                 />
               ))
             )}
