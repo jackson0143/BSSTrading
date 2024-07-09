@@ -241,66 +241,71 @@ function App() {
     "young_elf",
   ];
 
-
-  const [itemQuantities, setItemQuantities] = useState({
+  const [OuritemQuantities, setOurItemQuantities] = useState({
     cubs: {},
     hive: {},
     vouchers: {},
     stickers: {},
   });
 
-  
-  const handleAddItem = (item, type) => {
-    const currentQuantity = itemQuantities[type][item] || 0;
+  const [TheiritemQuantities, setTheirItemQuantities] = useState({
+    cubs: {},
+    hive: {},
+    vouchers: {},
+    stickers: {},
+  });
+
+  const handleOurAddItem = ( item, type) => {
+    const currentQuantity = OuritemQuantities[type][item] || 0;
     const updatedQuantities = {
-      ...itemQuantities,
+      ...OuritemQuantities,
       [type]: {
-        ...itemQuantities[type],
+        ...OuritemQuantities[type],
         [item]: currentQuantity + 1,
       },
     };
-    setItemQuantities(updatedQuantities);
+    setOurItemQuantities(updatedQuantities);
     console.log(getAllItems());
   };
 
-  const handleRemoveItem = (item, type) => {
-    const currentQuantity = itemQuantities[type][item] || 0;
-    if (currentQuantity > 0) {
-      const updatedQuantities = {
-        ...itemQuantities,
-        [type]: {
-          ...itemQuantities[type],
-          [item]: currentQuantity - 1,
-        },
-      };
-      setItemQuantities(updatedQuantities);
-    }
+  const handleTheirAddItem = ( item, type) => {
+    const currentQuantity = TheiritemQuantities[type][item] || 0;
+    const updatedQuantities = {
+      ...TheiritemQuantities,
+      [type]: {
+        ...TheiritemQuantities[type],
+        [item]: currentQuantity + 1,
+      },
+    };
+    setTheirItemQuantities(updatedQuantities);
+    console.log(getAllItems());
   };
 
-  const getAllItems = () => {
+
+  const getAllItems = (team) => {
     const allItems = [];
 
-    Object.keys(itemQuantities.cubs).forEach((item) => {
-      allItems.push({ type: "cubs", item, count: itemQuantities.cubs[item] });
+    Object.keys(team.cubs).forEach((item) => {
+      allItems.push({ type: "cubs", item, count: team.cubs[item] });
     });
 
-    Object.keys(itemQuantities.hive).forEach((item) => {
-      allItems.push({ type: "hive", item, count: itemQuantities.hive[item] });
+    Object.keys(team.hive).forEach((item) => {
+      allItems.push({ type: "hive", item, count: team.hive[item] });
     });
 
-    Object.keys(itemQuantities.vouchers).forEach((item) => {
+    Object.keys(team.vouchers).forEach((item) => {
       allItems.push({
         type: "vouchers",
         item,
-        count: itemQuantities.vouchers[item],
+        count: team.vouchers[item],
       });
     });
 
-    Object.keys(itemQuantities.stickers).forEach((item) => {
+    Object.keys(team.stickers).forEach((item) => {
       allItems.push({
         type: "stickers",
         item,
-        count: itemQuantities.stickers[item],
+        count: team.stickers[item],
       });
     });
     return allItems;
@@ -310,24 +315,26 @@ function App() {
     <div className="grid grid-cols-2 p-14 gap-80">
       <div className="bg-[#3c3c3c] border rounded-lg shadow-md border-gray-800 p-4">
         <div className="flex flex-col">
-          <div className="flex justify-center text-white mb-4">YOUR OFFER</div>
+          <div className="flex justify-center text-white mb-4 text-5xl font-bold">YOUR OFFER</div>
 
           <div className="flex flex-wrap gap-4 mt-4 bg-[#565656] border rounded-lg ">
-  {getAllItems().length === 0 ? (
-    <div className = "text-white p-4 text-3xl">No items added to the offer</div>
-  ) : (
-    getAllItems().map((item) => (
-      <ItemCard
-        key={`${item.type}-${item.item}`}
-        option="display"
-        type={item.type}
-        title={item.item}
-        count={item.count}
-        onClick={() => handleRemoveItem(item.item, item.type)}
-      />
-    ))
-  )}
-</div>
+            {getAllItems(OuritemQuantities).length === 0 ? (
+              <div className="text-white p-4 text-3xl">
+                No items added to the offer
+              </div>
+            ) : (
+              getAllItems(OuritemQuantities).map((item) => (
+                <ItemCard
+                  key={`${item.type}-${item.item}`}
+                  option="display"
+                  type={item.type}
+                  title={item.item}
+                  count={item.count}
+                  onClick={() => handleRemoveItem(item.item, item.type)}
+                />
+              ))
+            )}
+          </div>
           {/* Cub skins text + search bar */}
           <div className="flex pt-9 justify-between">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -367,7 +374,7 @@ function App() {
                 option="button"
                 type="cubs"
                 title={item}
-                onClick={() => handleAddItem(item, "cubs")}
+                onClick={() => handleOurAddItem(item, "cubs")}
               />
             ))}
           </div>
@@ -383,7 +390,7 @@ function App() {
                 option="button"
                 type="hive"
                 title={item}
-                onClick={() => handleAddItem(item, "hive")}
+                onClick={() => handleOurAddItem(item, "hive")}
               />
             ))}
           </div>
@@ -399,7 +406,7 @@ function App() {
                 option="button"
                 type="vouchers"
                 title={item}
-                onClick={() => handleAddItem(item, "vouchers")}
+                onClick={() => handleOurAddItem(item, "vouchers")}
               />
             ))}
           </div>
@@ -415,7 +422,7 @@ function App() {
                 option="button"
                 type="stickers"
                 title={item}
-                onClick={() => handleAddItem(item, "stickers")}
+                onClick={() => handleOurAddItem(item, "stickers")}
               />
             ))}
           </div>
@@ -424,8 +431,25 @@ function App() {
 
       <div className="bg-[#3c3c3c] border rounded-lg shadow-md border-gray-800 p-4">
         <div className="flex flex-col">
-          <div className="flex justify-center text-white mb-4">LOOKING FOR</div>
-    
+          <div className="flex justify-center text-white mb-4 text-5xl font-bold">LOOKING FOR</div>
+          <div className="flex flex-wrap gap-4 mt-4 bg-[#565656] border rounded-lg ">
+            {getAllItems(TheiritemQuantities).length === 0 ? (
+              <div className="text-white p-4 text-3xl">
+                No items added to the offer
+              </div>
+            ) : (
+              getAllItems(TheiritemQuantities).map((item) => (
+                <ItemCard
+                  key={`${item.type}-${item.item}`}
+                  option="display"
+                  type={item.type}
+                  title={item.item}
+                  count={item.count}
+                  onClick={() => handleRemoveItem(item.item, item.type)}
+                />
+              ))
+            )}
+          </div>
           <div className="flex pt-9 justify-between">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
               Cub skins
@@ -457,16 +481,61 @@ function App() {
           </div>
           <div className="flex flex-wrap gap-4 mt-4">
             {options.map((item) => (
-              <ItemCard option="button" type="cubs" title={item} />
+              <ItemCard
+                key={item}
+                option="button"
+                type="cubs"
+                title={item}
+                onClick={() => handleTheirAddItem(item, "cubs")}
+              />
             ))}
           </div>
 
+          {/* Display Hive skins */}
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl pt-9">
             Hive skins
           </h2>
           <div className="flex flex-wrap gap-4 mt-4">
             {options2.map((item) => (
-              <ItemCard option="button" type="hive" title={item} />
+              <ItemCard
+                key={item}
+                option="button"
+                type="hive"
+                title={item}
+                onClick={() => handleTheirAddItem(item, "hive")}
+              />
+            ))}
+          </div>
+          
+          {/* Display Vouchers */}
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl pt-9">
+            Vouchers
+          </h2>
+          <div className="flex flex-wrap gap-4 mt-4">
+            {options3.map((item) => (
+              <ItemCard
+                key={item}
+                option="button"
+                type="vouchers"
+                title={item}
+                onClick={() => handleTheirAddItem(item, "vouchers")}
+              />
+            ))}
+          </div>
+
+          {/* Display Stickers */}
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl pt-9">
+            Stickers
+          </h2>
+          <div className="flex flex-wrap gap-4 mt-4">
+            {options4.map((item) => (
+              <ItemCard
+                key={item}
+                option="button"
+                type="stickers"
+                title={item}
+                onClick={() => handleTheirAddItem(item, "stickers")}
+              />
             ))}
           </div>
         </div>
