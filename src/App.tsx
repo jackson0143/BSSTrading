@@ -317,7 +317,7 @@ function App() {
         <div className="flex flex-col">
           <div className="flex justify-center text-white mb-4 text-5xl font-bold">YOUR OFFER</div>
 
-          <div className="flex flex-wrap gap-4 mt-4 bg-[#565656] border rounded-lg ">
+          <div className="flex flex-wrap gap-3 pl-3 py-2 mt-4 bg-[#565656] border rounded-lg ">
             {getAllItems(OuritemQuantities).length === 0 ? (
               <div className="text-white p-4 text-3xl">
                 No items added to the offer
