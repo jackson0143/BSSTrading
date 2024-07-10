@@ -6,10 +6,10 @@ import { cubOptions } from "./options/cubOptions";
 import { hiveOptions } from "./options/hiveOptions";
 import { stickerOptions } from "./options/stickerOptions";
 import { voucherOptions } from "./options/voucherOptions";
+import { beequipOptions } from "./options/beequipOptions";
 import DisplayCard from "./components/DisplayCard";
 function App() {
   const [query, setQuery] = useState("");
-  console.log(cubOptions.filter((option) => option.name.includes("b")));
 
   const search = (item) => {
     return query.toLowerCase() === ""
@@ -19,33 +19,55 @@ function App() {
 
   const [OurInventory, setOurItemQuantities] = useState({
     cubs: {},
-    hive: {},
     vouchers: {},
+
+    hive: {},
     stickers: {},
+    beequip: {},
   });
 
   const resetOurInventory = () => {
     setOurItemQuantities({
       cubs: {},
-      hive: {},
       vouchers: {},
+
+      hive: {},
       stickers: {},
+      beequip: {},
     });
   };
   const [TheirInventory, setTheirItemQuantities] = useState({
     cubs: {},
-    hive: {},
     vouchers: {},
+
+    hive: {},
     stickers: {},
+    beequip: {},
   });
   const resetTheirInventory = () => {
     setTheirItemQuantities({
       cubs: {},
-      hive: {},
       vouchers: {},
+
+      hive: {},
       stickers: {},
+      beequip: {},
     });
   };
+
+  /*
+  const listtoPrint = ['Autumn_Sunhat', 'Bandage', 'Bang_Snap', 'Bead_Lizard', 'Beesmas_Top', 'Beesmas_Tree_Hat', 'Beret', 'Bottle_Cap', 'Bubble_Light', 'Camo_Bandana', 'Camphor_Lip_Balm', 'Candy_Ring', 'Charm_Bracelet', 'Demon_Talisman', 'Electric_Candle', 'Elf_Cap', 'Festive_Wreath', 'Icicles', 'Kazoo', 'Lei', 'Lump_Of_Coal', 'name_extract.py', 'Paperclip', 'Paper_Angel', 'Peppermint_Antennas', 'Pinecone', 'Pink_Eraser', 'Pink_Shades', 'Poinsettia', 'Reindeer_Antlers', 'Rose_Headband', 'Single_Mitten', 'Smiley_Sticker', 'Snowglobe', 'Snow_Tiara', 'Sweatband', 'Thimble', 'Thumbtack', 'Toy_Drum', 'Toy_Horn', 'Warm_Scarf', 'Whistle']
+  const objectString = listtoPrint.map((name, index) => ({
+    index,
+    name, 
+    type: "beequip", 
+    main_stat:{},
+    main_stat_negative:{},
+    hive_bonus:{}
+
+  }))
+  console.log(objectString)
+  */
   const handleOurAddItem = (item, type) => {
     const currentQuantity = OurInventory[type][item] || 0;
     const updatedQuantities = {
@@ -58,6 +80,26 @@ function App() {
     setOurItemQuantities(updatedQuantities);
   };
 
+  const handleOurRemoveItem = (item, type) => {
+    const currentQuantity = OurInventory[type][item] || 0;
+  
+    if (currentQuantity > 0) {
+      const updatedQuantities = {
+        ...OurInventory,
+        [type]: {
+          ...OurInventory[type],
+          [item]: currentQuantity - 1,
+        },
+      };
+         
+    if (updatedQuantities[type][item] === 0) {
+      delete updatedQuantities[type][item];
+    }
+ 
+  
+      setOurItemQuantities(updatedQuantities);
+    }
+  };
   const handleTheirAddItem = (item, type) => {
     const currentQuantity = TheirInventory[type][item] || 0;
     const updatedQuantities = {
@@ -77,17 +119,19 @@ function App() {
       allItems.push({ type: "cubs", item, count: team.cubs[item] });
     });
 
+    Object.keys(team.vouchers).forEach((item) => {
+      allItems.push({
+        type: "vouchers",item, count: team.vouchers[item]});
+    });
+
+
+
+
     Object.keys(team.hive).forEach((item) => {
       allItems.push({ type: "hive", item, count: team.hive[item] });
     });
 
-    Object.keys(team.vouchers).forEach((item) => {
-      allItems.push({
-        type: "vouchers",
-        item,
-        count: team.vouchers[item],
-      });
-    });
+
 
     Object.keys(team.stickers).forEach((item) => {
       allItems.push({
@@ -95,6 +139,10 @@ function App() {
         item,
         count: team.stickers[item],
       });
+    });
+    Object.keys(team.beequip).forEach((item) => {
+      allItems.push({
+        type: "beequip",item, count: team.beequip[item]});
     });
     return allItems;
   };
@@ -118,6 +166,8 @@ function App() {
                   type={item.type}
                   title={item.item}
                   count={item.count}
+                  onClick={() => handleOurRemoveItem(item.item, item.type)} 
+                  
                 />
               ))
             )}
@@ -181,6 +231,19 @@ function App() {
           </h2>
           <div className="flex flex-wrap gap-4 mt-4">
             {voucherOptions.filter(search).map((item) => (
+              <ItemCard
+                type={item.type}
+                title={item.name}
+                onClick={() => handleOurAddItem(item.name, item.type)}
+              />
+            ))}
+          </div>
+          {/* Display Beequips */}
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl pt-9">
+            Beequips
+          </h2>
+          <div className="flex flex-wrap gap-4 mt-4">
+            {beequipOptions.filter(search).map((item) => (
               <ItemCard
                 type={item.type}
                 title={item.name}

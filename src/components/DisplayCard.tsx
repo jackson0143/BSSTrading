@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const DisplayCard = ({ title, type, count = 0 }) => {
+const DisplayCard = ({ title, type, count = 0, onClick }) => {
   const [style, setStyle] = useState({ display: "none" });
   const titlesplitted = title
     .split("_")
@@ -19,9 +19,9 @@ const DisplayCard = ({ title, type, count = 0 }) => {
     >
       <div className="flex flex-col items-center">
 
-        <button type="button"  style={style} className=" absolute top-2 right-2 focus:outline-none text-white bg-red-700 hover:bg-red-800  font-medium rounded-lg text-sm px-1.5 py-1.5  ">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-4">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+        <button onClick = {onClick} type="button"  style={style} className=" absolute top-2 right-2 focus:outline-none text-white bg-red-700 hover:bg-red-800  font-medium rounded-lg text-sm px-1.5 py-1.5  ">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-4">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14" />
 </svg>
 
         </button>
