@@ -7,6 +7,7 @@ import { voucherOptions } from "../options/voucherOptions";
 import { beequipOptions } from "../options/beequipOptions";
 import DisplayCard from "../components/DisplayCard";
 import { useState } from "react";
+import DescriptionDialog from "../components/DescriptionDialog";
 
 function Home() {
   const [query, setQuery] = useState("");
@@ -16,6 +17,12 @@ function Home() {
       ? item
       : item.name.split("_").join(" ").toLowerCase().includes(query);
   };
+
+
+  const [dialogState, setDialogState] = useState(false)
+  const [dataFromDialog, setDataFromDialog] = useState(null);
+
+
 
   const [OurInventory, setOurItemQuantities] = useState({
     cubs: {},
@@ -166,6 +173,7 @@ function Home() {
     });
     return allItems;
   };
+
   return (
     <div className="grid grid-cols-12 p-14 gap-8">
       <div className="bg-[#3c3c3c] col-span-5  border rounded-lg shadow-md border-gray-800 p-4">
@@ -190,16 +198,28 @@ function Home() {
               ))
             )}
           </div>
+            
+          
+          {dataFromDialog!= null ? (
+              <div className=" ml-1 rounded-md pl-4 py-2 mt-4 bg-[#565656] w-3/4">
+               NOTE: {dataFromDialog}
+              </div>
+            ):null}
+          <DescriptionDialog open={dialogState} setOpen = {setDialogState} sendDataToParent={setDataFromDialog} ></DescriptionDialog>
+      
           {/* Cub skins text + search bar */}
           <div className="flex pt-9 justify-between">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Cub skins
-            </h2>
+            <div className = "flex">
+              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl pr-4">
+                Cub skins
+              </h2>
+              <button type="button" onClick={ ()=> setDialogState(true)}className="text-white bg-gray-800 hover:bg-gray-700 font-medium rounded-lg text-sm px-4 ">Add a description</button>
+            </div>
             <div className="flex">
               {" "}
               <button
                 type="button"
-                className="px-4  text-sm font-semibold rounded bg-red-400 text-gray-50 hover:text-gray-200 text-center me-2  "
+                className="px-4  text-sm font-semibold rounded-lg shadow bg-red-400 text-gray-50 hover:text-gray-200 text-center me-2  "
                 onClick={resetOurInventory}
               >
                 Clear all
@@ -299,14 +319,26 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className = "col-span-2 flex flex-col items-center pt-32">
+      <div className="col-span-2 flex flex-col items-center pt-32">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          className="size-48"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
+          />
+        </svg>
+        <p className="">TRADE</p>
 
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-48">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
-</svg>
-            <p className="">TRADE</p>
+        <p className="">made by euwunha</p>
       </div>
-            
+
       <div className="bg-[#3c3c3c] col-span-5 border rounded-lg shadow-md border-gray-800 p-4">
         <div className="flex flex-col">
           <div className="flex justify-center text-white mb-4 text-5xl font-bold">
@@ -328,15 +360,19 @@ function Home() {
               ))
             )}
           </div>
+          
           <div className="flex pt-9 justify-between">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Cub skins
-            </h2>
+            <div className = "flex">
+              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl pr-4">
+                Cub skins
+              </h2>
+           
+            </div>
             <div className="flex">
               {" "}
               <button
                 type="button"
-                className="px-4  text-sm font-semibold rounded bg-red-400 text-gray-50 hover:text-gray-200 text-center me-2  "
+                className="px-4  text-sm font-semibold shadow-lg rounded-lg bg-red-400 text-gray-50 hover:text-gray-200 text-center me-2  "
                 onClick={resetTheirInventory}
               >
                 Clear all
