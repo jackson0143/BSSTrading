@@ -209,17 +209,17 @@ function Home() {
       
           {/* Cub skins text + search bar */}
           <div className="flex pt-9 justify-between">
-            <div className = "flex">
-              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl pr-4">
+            <div className = "flex ">
+              <h2 className="text-2xl font-bold  tracking-tight text-white flex text-center items-center  pr-3">
                 Cub skins
               </h2>
-              <button type="button" onClick={ ()=> setDialogState(true)}className="text-white bg-gray-800 hover:bg-gray-700 font-medium rounded-lg text-sm px-4 ">Add a description</button>
+              <button type="button" onClick={ ()=> setDialogState(true)}className="text-white bg-gray-800 hover:bg-gray-700 font-medium rounded-lg text-sm px-3 ">Add description</button>
             </div>
             <div className="flex">
               {" "}
               <button
                 type="button"
-                className="px-4  text-sm font-semibold rounded-lg shadow bg-red-400 text-gray-50 hover:text-gray-200 text-center me-2  "
+                className="px-4  text-sm font-semibold shadow-lg rounded-lg bg-red-400 text-gray-50 hover:text-gray-200 text-center me-2  "
                 onClick={resetOurInventory}
               >
                 Clear all
@@ -243,7 +243,7 @@ function Home() {
                 </div>
 
                 <input
-                  className="peer h-full w-full bg-[#565656] outline-none text-sm text-white-700 pr-2"
+                  className="flex peer h-full w-full bg-[#565656] outline-none text-sm text-white-700 pr-2"
                   type="text"
                   id="search"
                   placeholder="Search something.."
@@ -363,7 +363,7 @@ function Home() {
           
           <div className="flex pt-9 justify-between">
             <div className = "flex">
-              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl pr-4">
+              <h2 className="text-2xl font-bold tracking-tight text-white  pr-4">
                 Cub skins
               </h2>
            
