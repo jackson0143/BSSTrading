@@ -11,7 +11,7 @@ const createToken = (_id) => {
 const Register = async (req, res) => {
     const { email, password, username, createdAt } = req.body;
     try {
-        //Checks if email already exists
+        //Checks if email or username already exists
         let existingUser = await User.findOne({ email });
         if (existingUser) {
             return res.status(400).json({ msg: 'User already exists' });
@@ -21,6 +21,8 @@ const Register = async (req, res) => {
             return res.status(400).json({ msg: 'Username already in use' });
         }
 
+
+        //Hashes a new password with bcrypt
         const salt = await bcrypt.genSalt(10)
         const hashed_password = await bcrypt.hash(password, salt)
 
@@ -49,6 +51,7 @@ const Login = async (req, res) => {
             return res.json({ message: 'All fields are required' })
         }
 
+        //Gets user, then checks for errors
         const user = await User.findOne({ $or: [{ email }, { username }] });
         if (!user) {
             return res.status(400).json({ message: 'Email or Username does not exist' });
@@ -57,6 +60,7 @@ const Login = async (req, res) => {
         if (!auth) {
             return res.json({ message: 'Incorrect password or email' })
         }
+        
 
         const token = createToken(user._id)
        
