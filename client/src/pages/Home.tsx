@@ -23,13 +23,11 @@ function Home() {
   const [dataFromDialog, setDataFromDialog] = useState(null);
   const [isOpenOurs, setIsOpenOurs] = useState(false);
   const [isOpenTheirs, setIsOpenTheirs] = useState(false);
-  
+
   const [currentBeequip, setCurrentBeequip] = useState();
   const handleBeequip = (item, team) => {
     setCurrentBeequip(item);
-    team == "ours"?setIsOpenOurs(true):setIsOpenTheirs(true);
-   
-   
+    team == "ours" ? setIsOpenOurs(true) : setIsOpenTheirs(true);
   };
 
   const [OurInventory, setOurItemQuantities] = useState({
@@ -42,7 +40,7 @@ function Home() {
   });
   const [TheirInventory, setTheirItemQuantities] = useState({
     cub: {},
-   
+
     hive: {},
     sticker: {},
     beequip: [],
@@ -207,7 +205,7 @@ function Home() {
           <div className="flex justify-center custom text-red-500 mb-4 text-3xl font-bold">
             YOUR OFFER
           </div>
-          
+
           <div className="flex flex-col pl-2 py-2 mt-4 bg-[#565656] border rounded-lg">
             {getAllItems(OurInventory).length === 0 ? (
               <div className="text-white px-4 py-[38px] text-xxl">
@@ -276,8 +274,7 @@ function Home() {
             setInventory={setOurItemQuantities}
           ></ItemDialog>
 
-
-<ItemDialog
+          <ItemDialog
             beequip={currentBeequip}
             open={isOpenTheirs}
             setOpen={setIsOpenTheirs}
@@ -287,9 +284,9 @@ function Home() {
           ></ItemDialog>
 
           {/* Cub skins text + search bar */}
-          <div className="flex pt-9 justify-between">
-            <div className="flex ">
-              <h2 className="text-2xl font-bold  tracking-tight text-white flex text-center items-center  pr-3">
+          <div className="flex flex-col gap-4 pt-9 sm:flex-row sm:justify-between">
+            <div className="flex flex-col sm:flex-row  gap-2  ">
+              <h2 className="text-2xl font-bold  tracking-tight text-white flex text-center  pr-3">
                 Cub skins
               </h2>
               <button
@@ -300,8 +297,7 @@ function Home() {
                 Add description
               </button>
             </div>
-            <div className="flex">
-              {" "}
+            <div className="flex flex-col sm:flex-row  ">
               <button
                 type="button"
                 className="px-4   text-sm font-semibold shadow-lg rounded-lg bg-red-400 text-gray-50 hover:text-gray-200 text-center me-2   "
@@ -309,7 +305,7 @@ function Home() {
               >
                 Clear all
               </button>
-              <div className="flex items-center max-w-2xl h-12 rounded-lg focus-within:shadow-lg bg-[#565656] overflow-hidden">
+              <div className="flex items-center max-w-xs sm:max-w-md h-12 rounded-lg focus-within:shadow-lg bg-[#565656] overflow-hidden">
                 <div className="grid place-items-center h-full w-10 text-gray-300 bg-[#565656]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -427,7 +423,7 @@ function Home() {
           viewBox="0 0 24 24"
           strokeWidth="1.5"
           stroke="currentColor"
-          className="size-48"
+          className="w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40"
         >
           <path
             strokeLinecap="round"
@@ -435,9 +431,10 @@ function Home() {
             d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
           />
         </svg>
-        <p className="">TRADE</p>
-
-        <p className="">made by euwunha</p>
+              
+        <p className="text-lg font-semibold mt-2">TRADE</p>
+        <p className="text-sm ">beesfortrade. vercel.app </p>
+        <p className="text-sm mt-1">made by euwunha</p>
       </div>
 
       <div className="bg-[#3c3c3c] col-span-5 border rounded-lg shadow-md border-gray-800 p-4">
@@ -493,16 +490,13 @@ function Home() {
               </>
             )}
           </div>
-
-
-          <div className="flex pt-9 justify-between">
-            <div className="flex">
-              <h2 className="text-2xl font-bold tracking-tight text-white  pr-4">
+          <div className="flex flex-col gap-4 pt-9 sm:flex-row sm:justify-between">
+            <div className="flex flex-col sm:flex-row  gap-2  ">
+              <h2 className="text-2xl font-bold  tracking-tight text-white flex text-center  pr-3">
                 Cub skins
               </h2>
             </div>
-            <div className="flex">
-              {" "}
+            <div className="flex flex-col sm:flex-row ">
               <button
                 type="button"
                 className="px-4  text-sm font-semibold shadow-lg rounded-lg bg-red-400 text-gray-50 hover:text-gray-200 text-center me-2  "
@@ -510,8 +504,8 @@ function Home() {
               >
                 Clear all
               </button>
-              <div className="flex items-center max-w-2xl h-12 rounded-lg focus-within:shadow-lg bg-[#565656] overflow-hidden">
-                <div className="grid place-items-center h-full w-12 text-gray-300 bg-[#565656]">
+              <div className="flex items-center max-w-xs sm:max-w-md h-12 rounded-lg focus-within:shadow-lg bg-[#565656] overflow-hidden">
+                <div className="grid place-items-center h-full w-10 text-gray-300 bg-[#565656]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6"
@@ -529,7 +523,7 @@ function Home() {
                 </div>
 
                 <input
-                  className="peer h-full w-full bg-[#565656] outline-none text-sm text-white-700 pr-2"
+                  className="flex peer h-full w-full bg-[#565656] outline-none text-sm text-white-700 pr-2"
                   type="text"
                   id="search"
                   placeholder="Search something.."

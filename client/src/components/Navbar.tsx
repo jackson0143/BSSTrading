@@ -31,7 +31,7 @@ function Navbar() {
         </div>
         <div>
           <p className="pt-32">
-            Image credits go to Bee Swarm Simulator .<br></br> More features to come - euwunha
+            Image credits go to Bee Swarm Simulator<br></br> More features to come - euwunha
           </p>
         </div>
       </div>
