@@ -6,7 +6,7 @@ const BeequipDisplayCard = ({ item, onClick }) => {
 
   return (
     <div
-      className="bg-[#2b2b2b] z-0 rounded-lg p-2  h-auto relative"
+      className="bg-[#2b2b2b] z-0 rounded-lg p-2 w-auto  h-auto relative"
       onMouseEnter={() => {
         setStyle({ display: "block" });
       }}

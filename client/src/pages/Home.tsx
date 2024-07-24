@@ -21,26 +21,32 @@ function Home() {
   };
   const [isOpen, setIsOpen] = useState(false);
   const [dataFromDialog, setDataFromDialog] = useState(null);
-  const [isOpen2, setIsOpen2] = useState(false);
+  const [isOpenOurs, setIsOpenOurs] = useState(false);
+  const [isOpenTheirs, setIsOpenTheirs] = useState(false);
+  
   const [currentBeequip, setCurrentBeequip] = useState();
-  const handleBeequip = (item) => {
+  const handleBeequip = (item, team) => {
     setCurrentBeequip(item);
-    setIsOpen2(true);
+    team == "ours"?setIsOpenOurs(true):setIsOpenTheirs(true);
+   
+   
   };
 
   const [OurInventory, setOurItemQuantities] = useState({
     cub: {},
-    voucher: {},
+
     hive: {},
     sticker: {},
     beequip: [],
+    voucher: {},
   });
   const [TheirInventory, setTheirItemQuantities] = useState({
     cub: {},
-    voucher: {},
+   
     hive: {},
     sticker: {},
     beequip: [],
+    voucher: {},
   });
 
   const resetInventory = (setInventory) => {
@@ -201,7 +207,8 @@ function Home() {
           <div className="flex justify-center custom text-red-500 mb-4 text-3xl font-bold">
             YOUR OFFER
           </div>
-          <div className="flex flex-col gap-4 pl-2 py-2 mt-4 bg-[#565656] border rounded-lg">
+          
+          <div className="flex flex-col pl-2 py-2 mt-4 bg-[#565656] border rounded-lg">
             {getAllItems(OurInventory).length === 0 ? (
               <div className="text-white px-4 py-[38px] text-xxl">
                 No items added to the offer
@@ -209,7 +216,7 @@ function Home() {
             ) : (
               <>
                 {/* Display Cards in a row */}
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-3 mb-3">
                   {getAllItems(OurInventory)
                     .filter((item) => item.type !== "beequip")
                     .map((item) => (
@@ -228,7 +235,7 @@ function Home() {
                 </div>
 
                 {/* Beequip Cards in a new row */}
-                <div className="flex flex-wrap gap-3 mt-4">
+                <div className="flex flex-wrap gap-3">
                   {getAllItems(OurInventory)
                     .filter((item) => item.type === "beequip")
                     .map((item) => (
@@ -262,11 +269,21 @@ function Home() {
 
           <ItemDialog
             beequip={currentBeequip}
-            open={isOpen2}
-            setOpen={setIsOpen2}
+            open={isOpenOurs}
+            setOpen={setIsOpenOurs}
             handleAddItem={handleAddItem}
             inventory={OurInventory}
             setInventory={setOurItemQuantities}
+          ></ItemDialog>
+
+
+<ItemDialog
+            beequip={currentBeequip}
+            open={isOpenTheirs}
+            setOpen={setIsOpenTheirs}
+            handleAddItem={handleAddItem}
+            inventory={TheirInventory}
+            setInventory={setTheirItemQuantities}
           ></ItemDialog>
 
           {/* Cub skins text + search bar */}
@@ -362,7 +379,7 @@ function Home() {
                 <ItemCard
                   item={item}
                   onClick={() => {
-                    handleBeequip(item);
+                    handleBeequip(item, "ours");
                   }}
                 />
               ))}
@@ -429,26 +446,54 @@ function Home() {
             LOOKING FOR
           </div>
 
-          <div className="flex flex-wrap gap-3 pl-2 py-2 mt-4 bg-[#565656] border rounded-lg">
+          <div className="flex flex-col pl-2 py-2 mt-4 bg-[#565656] border rounded-lg">
             {getAllItems(TheirInventory).length === 0 ? (
-              <div className="text-white px-4 py-[38px] text-xl">
+              <div className="text-white px-4 py-[38px] text-xxl">
                 No items added to the offer
               </div>
             ) : (
-              getAllItems(TheirInventory).map((item) => (
-                <DisplayCard
-                  item={item}
-                  onClick={() =>
-                    handleRemoveItem(
-                      item,
-                      TheirInventory,
-                      setTheirItemQuantities
-                    )
-                  }
-                />
-              ))
+              <>
+                {/* Display Cards in a row */}
+                <div className="flex flex-wrap gap-3 mb-3">
+                  {getAllItems(TheirInventory)
+                    .filter((item) => item.type !== "beequip")
+                    .map((item) => (
+                      <DisplayCard
+                        key={item.id}
+                        item={item}
+                        onClick={() =>
+                          handleRemoveItem(
+                            item,
+                            TheirInventory,
+                            setTheirItemQuantities
+                          )
+                        }
+                      />
+                    ))}
+                </div>
+
+                {/* Beequip Cards in a new row */}
+                <div className="flex flex-wrap gap-3">
+                  {getAllItems(TheirInventory)
+                    .filter((item) => item.type === "beequip")
+                    .map((item) => (
+                      <BeequipDisplayCard
+                        key={item.id}
+                        item={item}
+                        onClick={() =>
+                          handleRemoveItem(
+                            item,
+                            TheirInventory,
+                            setTheirItemQuantities
+                          )
+                        }
+                      />
+                    ))}
+                </div>
+              </>
             )}
           </div>
+
 
           <div className="flex pt-9 justify-between">
             <div className="flex">
@@ -534,9 +579,9 @@ function Home() {
               .map((item) => (
                 <ItemCard
                   item={item}
-                  onClick={() =>
-                    handleAddItem(item, TheirInventory, setTheirItemQuantities)
-                  }
+                  onClick={() => {
+                    handleBeequip(item, "theirs");
+                  }}
                 />
               ))}
           </div>

@@ -5,7 +5,7 @@ function Navbar() {
         <img src="./bannerbss.png" className="w-auto ml-28" alt="Banner" />
         <div className="flex col-span-3 flex-col justify-center items-center">
           <a href="/" className="text-6xl font-bold cursor-pointer ">
-            BSS trade creator (beta)
+            Bees For Trade (beta)
           </a>
           <div className="pt-6">
             <a
@@ -13,6 +13,7 @@ function Navbar() {
               className="flex items-center bg-[#7289da]  hover:bg-[#7289da]/90 rounded-lg  font-medium  text-lg hover:bg-gray-200 shadow-lg  px-5 py-2.5 me-2 mb-2  "
   
             href="https://discord.gg/uWpZUcu3Am"
+            target="_blank"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +31,7 @@ function Navbar() {
         </div>
         <div>
           <p className="pt-32">
-            All credits go to Bee Swarm Simulator (game and Wiki)
+            Image credits go to Bee Swarm Simulator .<br></br> More features to come - euwunha
           </p>
         </div>
       </div>
