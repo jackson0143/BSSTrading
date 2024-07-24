@@ -43,8 +43,8 @@ function Home() {
     beequip: {},
   });
 
-  const resetOurInventory = () => {
-    setOurItemQuantities({
+  const resetInventory = (setInventory) => {
+    setInventory({
       cub: {},
       voucher: {},
       hive: {},
@@ -52,17 +52,74 @@ function Home() {
       beequip: {},
     });
   };
-  const resetTheirInventory = () => {
-    setTheirItemQuantities({
-      cub: {},
-      voucher: {},
-      hive: {},
-      sticker: {},
-      beequip: {},
-    });
+  
+   
+    const handleAddItem = (item, inventory, setInventory) => {
+      const { type, name, image } = item;
+      
+      // Initialize the inventory for the type if it does not exist
+      if (!inventory[type]) {
+          inventory[type] = {};
+      }
+  
+      const currentItem = inventory[type][name] || { quantity: 0, image: '' };
+  
+      const updatedQuantities = {
+          ...inventory,
+          [type]: {
+              ...inventory[type],
+              [name]: {
+                  quantity: currentItem.quantity + 1,
+                  image: image || currentItem.image
+              }
+          }
+      };
+      setInventory(updatedQuantities);
   };
 
-  /*
+  const handleRemoveItem = (item, inventory, setInventory) => {
+    const { type, name } = item;
+    const currentQuantity = inventory[type]?.[name]?.quantity || 0;
+
+    if (currentQuantity > 0) {
+        const updatedQuantities = {
+            ...inventory,
+            [type]: {
+                ...inventory[type],
+                [name]: {
+                    ...inventory[type][name],
+                    quantity: currentQuantity - 1,
+                },
+            },
+        };
+
+        if (updatedQuantities[type][name].quantity === 0) {
+            delete updatedQuantities[type][name];
+        }
+        setInventory(updatedQuantities);
+    }
+};
+
+  const getAllItems = (inventory) => {
+    const allItems = [];
+    
+    Object.keys(inventory).forEach((type) => {
+        Object.keys(inventory[type]).forEach((name) => {
+            const item = inventory[type][name];
+            allItems.push({ 
+                type, 
+                name, 
+                quantity: item.quantity, 
+                image: item.image 
+            });
+        });
+    });
+
+    return allItems;
+};
+
+
+/*
   
     const listtoPrint =['Bee_Cub', 'Brown_Cub', 'Doodle_Cub', 'Gingerbread_Cub', 'name_extract.py', 'Noob_Cub', 'Peppermint_Cub', 'Robo_Cub', 'Snow_Cub', 'Star_Cub', 'Stick_Cub']
       const objectString = listtoPrint.map((name, index) => ({
@@ -76,112 +133,6 @@ function Home() {
     }))
     console.log(objectString)
     */
-    
-  const handleOurAddItem = (item) => {
-    const {type, name} = item
-    const currentQuantity = OurInventory[type][name] || 0;
-    const updatedQuantities = {
-      ...OurInventory,
-      [type]: {
-        ...OurInventory[type],
-        [name]: currentQuantity + 1,
-      },
-    };
-    setOurItemQuantities(updatedQuantities);
-    console.log(OurInventory)
-  };
-
-  const handleOurRemoveItem = (item) => {
-
-    const {type, name} = item
-    const currentQuantity = OurInventory[type][name] || 0;
-
-    if (currentQuantity > 0) {
-      const updatedQuantities = {
-        ...OurInventory,
-        [type]: {
-          ...OurInventory[type],
-          [name]: currentQuantity - 1,
-        },
-      };
-      if (updatedQuantities[type][name] === 0) {
-        delete updatedQuantities[type][name];
-      }
-      setOurItemQuantities(updatedQuantities);
-    }
-  };
-  const handleTheirAddItem = (item) => {
-    const {type, name} = item
-    const currentQuantity = TheirInventory[type][name] || 0;
-    const updatedQuantities = {
-      ...TheirInventory,
-      [type]: {
-        ...TheirInventory[type],
-        [name]: currentQuantity + 1,
-      },
-    };
-    setTheirItemQuantities(updatedQuantities);
-  };
-
-  const handleTheirRemoveItem = (item) => {
-    const {type, name} = item
-    const currentQuantity = TheirInventory[type][name] || 0;
-
-    if (currentQuantity > 0) {
-      const updatedQuantities = {
-        ...TheirInventory,
-        [type]: {
-          ...TheirInventory[type],
-          [name]: currentQuantity - 1,
-        },
-      };
-
-      if (updatedQuantities[type][name] === 0) {
-        delete updatedQuantities[type][name];
-      }
-
-      setTheirItemQuantities(updatedQuantities);
-    }
-  };
-  
-  const getAllItems = (team) => {
-    const allItems = [];
-    
-    Object.keys(team.cub).forEach((name) => {
-      allItems.push({ type: "cub", name, count: team.cub[name] });
-    });
-   
-
-    Object.keys(team.voucher).forEach((name) => {
-      allItems.push({
-        type: "voucher",
-        name,
-        count: team.voucher[name],
-      });
-    });
-
-    Object.keys(team.hive).forEach((name) => {
-      allItems.push({ type: "hive", name, count: team.hive[name] });
-    });
-
-    Object.keys(team.sticker).forEach((name) => {
-      allItems.push({
-        type: "sticker",
-        name,
-        count: team.sticker[name],
-      });
-    });
-    Object.keys(team.beequip).forEach((name) => {
-      allItems.push({
-        type: "beequip",
-        name,
-        count: team.beequip[name],
-      });
-    });
-    
-    return allItems;
-  };
-
   
   return (
     <div className="grid grid-cols-12 p-14 gap-8">
@@ -200,15 +151,13 @@ function Home() {
               getAllItems(OurInventory).map((item) => (
                 <DisplayCard
 
-                  type={item.type}
-                  name={item.name}
-                  count={item.count}
-                  onClick={() => handleOurRemoveItem(item)}
+                  item = {item}
+                  onClick={() => handleRemoveItem(item, OurInventory, setOurItemQuantities)}
                 />
               ))
             )}
           </div>
-
+ 
           {dataFromDialog != null ? (
             <div className=" ml-1 rounded-md pl-4 py-2 mt-4 bg-[#565656] w-3/4">
               NOTE: {dataFromDialog}
@@ -238,8 +187,8 @@ function Home() {
               {" "}
               <button
                 type="button"
-                className="px-4   text-sm font-semibold shadow-lg rounded-lg bg-red-400 text-gray-50 hover:text-gray-200 text-center me-2  "
-                onClick={resetOurInventory}
+                className="px-4   text-sm font-semibold shadow-lg rounded-lg bg-red-400 text-gray-50 hover:text-gray-200 text-center me-2   "
+                onClick={()=> resetInventory(setOurItemQuantities)}
               >
                 Clear all
               </button>
@@ -276,7 +225,7 @@ function Home() {
             {cubOptions.filter(search).map((item) => (
               <ItemCard
                 item = {item}
-                onClick={() => handleOurAddItem(item)}
+                onClick={() => handleAddItem(item, OurInventory, setOurItemQuantities)}
               />
             ))}
           </div>
@@ -289,7 +238,7 @@ function Home() {
             {voucherOptions.filter(search).map((item) => (
               <ItemCard
                item = {item}
-                onClick={() => handleOurAddItem(item)}
+               onClick={() => handleAddItem(item, OurInventory, setOurItemQuantities)}
               />
             ))}
           </div>
@@ -320,7 +269,7 @@ function Home() {
             {hiveOptions.filter(search).map((item) => (
                             <ItemCard
                item = {item}
-                onClick={() => handleOurAddItem(item)}
+               onClick={() => handleAddItem(item, OurInventory, setOurItemQuantities)}
               />
             ))}
           </div>
@@ -333,7 +282,7 @@ function Home() {
             {stickerOptions.filter(search).map((item) => (
                             <ItemCard
                item = {item}
-                onClick={() => handleOurAddItem(item)}
+               onClick={() => handleAddItem(item, OurInventory, setOurItemQuantities)}
               />
             ))}
           </div>
@@ -375,10 +324,8 @@ function Home() {
               getAllItems(TheirInventory).map((item) => (
                 <DisplayCard
 
-                  type={item.type}
-                  name={item.name}
-                  count={item.count}
-                  onClick={() => handleTheirRemoveItem(item)}
+                  item = {item}
+                  onClick={() => handleRemoveItem(item, TheirInventory, setTheirItemQuantities)}
                 />
               ))
             )}
@@ -395,7 +342,7 @@ function Home() {
               <button
                 type="button"
                 className="px-4  text-sm font-semibold shadow-lg rounded-lg bg-red-400 text-gray-50 hover:text-gray-200 text-center me-2  "
-                onClick={resetTheirInventory}
+                onClick={()=> resetInventory(setTheirItemQuantities)}
               >
                 Clear all
               </button>
@@ -432,7 +379,7 @@ function Home() {
             {cubOptions.filter(search).map((item) => (
                             <ItemCard
                item = {item}
-                onClick={() => handleTheirAddItem(item)}
+               onClick={() => handleAddItem(item, TheirInventory, setTheirItemQuantities)}
               />
             ))}
           </div>
@@ -445,7 +392,7 @@ function Home() {
             {voucherOptions.filter(search).map((item) => (
                             <ItemCard
                item = {item}
-                onClick={() => handleTheirAddItem(item)}
+                onClick={() => handleAddItem(item, TheirInventory, setTheirItemQuantities)}
               />
             ))}
           </div>
@@ -458,7 +405,7 @@ function Home() {
             {beequipOptions.filter(search).map((item) => (
                             <ItemCard
                item = {item}
-                onClick={() => handleTheirAddItem(item)}
+                onClick={() => handleAddItem(item, TheirInventory, setTheirItemQuantities)}
               />
             ))}
           </div>
@@ -470,7 +417,7 @@ function Home() {
             {hiveOptions.filter(search).map((item) => (
                             <ItemCard
                item = {item}
-                onClick={() => handleTheirAddItem(item)}
+                onClick={() => handleAddItem(item, TheirInventory, setTheirItemQuantities)}
               />
             ))}
           </div>
@@ -483,7 +430,7 @@ function Home() {
             {stickerOptions.filter(search).map((item) => (
                             <ItemCard
                item = {item}
-                onClick={() => handleTheirAddItem(item)}
+                onClick={() => handleAddItem(item, TheirInventory, setTheirItemQuantities)}
               />
             ))}
           </div>

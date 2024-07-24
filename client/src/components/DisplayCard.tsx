@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-const DisplayCard = ({ name, type, count = 0, onClick }) => {
+const DisplayCard = ({ item, onClick }) => {
   const [style, setStyle] = useState({ display: "none" });
-
+  const {name, type, quantity, image} = item
   
   return (
     <div
@@ -23,7 +23,7 @@ const DisplayCard = ({ name, type, count = 0, onClick }) => {
 
         </button>
         <img
-          src={`./${type}/${name}.png`}
+          src={`./${type}/${image}.png`}
           className="rounded-md my-2"
           width={60}
           height={60}
@@ -32,7 +32,7 @@ const DisplayCard = ({ name, type, count = 0, onClick }) => {
 
         <div className="flex ">
           <div className="text-white text-sm font-semibold">{name}</div>
-          <div className="text-green-400 text-sm font-bold pl-2">{count}</div>
+          <div className="text-green-400 text-sm font-bold pl-2">{quantity}</div>
         </div>
       </div>
     </div>

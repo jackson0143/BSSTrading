@@ -33,7 +33,7 @@ function ItemDialog({ beequip, open, setOpen, onSubmit }) {
               <div >
                 
             {beequip.name.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
-            { <img src={`./${beequip.type}/${beequip.name}.png`} className="rounded-md my-2 "  width={50} height={50} alt={"empty"} />}
+            { <img src={`./${beequip.type}/${beequip.image}.png`} className="rounded-md my-2 "  width={50} height={50} alt={"empty"} />}
             {beequip.main_stat["+Convert Amount"]}
               </div>
             ) : <div>Beequip Name</div>}

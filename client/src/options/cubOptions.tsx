@@ -1,56 +1,56 @@
 export const cubOptions =[
     {
-        "name": "Bee Cub hive",
+        "name": "Bee Cub",
         "image": "Bee_Cub",
         "type": "cub"
     },
     {
-        "name": "Brown Cub hive",
+        "name": "Brown Cub",
         "image": "Brown_Cub",
         "type": "cub"
     },
     {
-        "name": "Doodle Cub hive",
+        "name": "Doodle Cub",
         "image": "Doodle_Cub",
         "type": "cub"
     },
     {
-        "name": "Gingerbread Cub hive",
+        "name": "Gingerbread Cub",
         "image": "Gingerbread_Cub",
         "type": "cub"
     },
     {
-        "name": "Name Extract.py hive",
+        "name": "Name Extract.py",
         "image": "name_extract.py",
         "type": "cub"
     },
     {
-        "name": "Noob Cub hive",
+        "name": "Noob Cub",
         "image": "Noob_Cub",
         "type": "cub"
     },
     {
-        "name": "Peppermint Cub hive",
+        "name": "Peppermint Cub",
         "image": "Peppermint_Cub",
         "type": "cub"
     },
     {
-        "name": "Robo Cub hive",
+        "name": "Robo Cub",
         "image": "Robo_Cub",
         "type": "cub"
     },
     {
-        "name": "Snow Cub hive",
+        "name": "Snow Cub",
         "image": "Snow_Cub",
         "type": "cub"
     },
     {
-        "name": "Star Cub hive",
+        "name": "Star Cub",
         "image": "Star_Cub",
         "type": "cub"
     },
     {
-        "name": "Stick Cub hive",
+        "name": "Stick Cub",
         "image": "Stick_Cub",
         "type": "cub"
     }

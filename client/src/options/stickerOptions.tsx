@@ -1,5 +1,77 @@
 export const stickerOptions = [
     {
+        "name": "Aquarius Star Sign",
+        "image": "aquarius_star_sign",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Aries Star Sign",
+        "image": "aries_star_sign",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Cancer Star Sign",
+        "image": "cancer_star_sign",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Capricorn Star Sign",
+        "image": "capricorn_star_sign",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Gemini Star Sign",
+        "image": "gemini_star_sign",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Leo Star Sign",
+        "image": "leo_star_sign",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Libra Star Sign",
+        "image": "libra_star_sign",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Pisces Star Sign",
+        "image": "pisces_star_sign",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Sagittarius Star Sign",
+        "image": "sagittarius_star_sign",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Scorpio Star Sign",
+        "image": "scorpio_star_sign",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Taurus Star Sign",
+        "image": "taurus_star_sign",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Virgo Star Sign",
+        "image": "virgo_star_sign",
+        "type": "sticker",
+        "value": 0
+    },
+    {
         "name": "4-pronged Vector Bee",
         "image": "4-pronged_vector_bee",
         "type": "sticker",
@@ -29,18 +101,7 @@ export const stickerOptions = [
         "type": "sticker",
         "value": 0
     },
-    {
-        "name": "Aquarius Star Sign",
-        "image": "aquarius_star_sign",
-        "type": "sticker",
-        "value": 0
-    },
-    {
-        "name": "Aries Star Sign",
-        "image": "aries_star_sign",
-        "type": "sticker",
-        "value": 0
-    },
+  
     {
         "name": "Atom Symbol",
         "image": "atom_symbol",
@@ -173,18 +234,7 @@ export const stickerOptions = [
         "type": "sticker",
         "value": 0
     },
-    {
-        "name": "Cancer Star Sign",
-        "image": "cancer_star_sign",
-        "type": "sticker",
-        "value": 0
-    },
-    {
-        "name": "Capricorn Star Sign",
-        "image": "capricorn_star_sign",
-        "type": "sticker",
-        "value": 0
-    },
+
     {
         "name": "Chanterelle Mushroom",
         "image": "chanterelle_mushroom",
@@ -467,12 +517,7 @@ export const stickerOptions = [
         "type": "sticker",
         "value": 0
     },
-    {
-        "name": "Gemini Star Sign",
-        "image": "gemini_star_sign",
-        "type": "sticker",
-        "value": 0
-    },
+
     {
         "name": "Giraffe",
         "image": "giraffe",
@@ -665,18 +710,7 @@ export const stickerOptions = [
         "type": "sticker",
         "value": 0
     },
-    {
-        "name": "Leo Star Sign",
-        "image": "leo_star_sign",
-        "type": "sticker",
-        "value": 0
-    },
-    {
-        "name": "Libra Star Sign",
-        "image": "libra_star_sign",
-        "type": "sticker",
-        "value": 0
-    },
+  
     {
         "name": "Lightning",
         "image": "lightning",
@@ -875,12 +909,7 @@ export const stickerOptions = [
         "type": "sticker",
         "value": 0
     },
-    {
-        "name": "Pisces Star Sign",
-        "image": "pisces_star_sign",
-        "type": "sticker",
-        "value": 0
-    },
+
     {
         "name": "Pizza Delivery Man",
         "image": "pizza_delivery_man",
@@ -1103,12 +1132,7 @@ export const stickerOptions = [
         "type": "sticker",
         "value": 0
     },
-    {
-        "name": "Sagittarius Star Sign",
-        "image": "sagittarius_star_sign",
-        "type": "sticker",
-        "value": 0
-    },
+ 
     {
         "name": "Satisfying Nectar Icon",
         "image": "satisfying_nectar_icon",
@@ -1133,12 +1157,7 @@ export const stickerOptions = [
         "type": "sticker",
         "value": 0
     },
-    {
-        "name": "Scorpio Star Sign",
-        "image": "scorpio_star_sign",
-        "type": "sticker",
-        "value": 0
-    },
+  
     {
         "name": "Scythe",
         "image": "scythe",
@@ -1379,12 +1398,7 @@ export const stickerOptions = [
         "type": "sticker",
         "value": 0
     },
-    {
-        "name": "Taurus Star Sign",
-        "image": "taurus_star_sign",
-        "type": "sticker",
-        "value": 0
-    },
+ 
     {
         "name": "Theatrical Intruder",
         "image": "theatrical_intruder",
@@ -1451,12 +1465,7 @@ export const stickerOptions = [
         "type": "sticker",
         "value": 0
     },
-    {
-        "name": "Virgo Star Sign",
-        "image": "virgo_star_sign",
-        "type": "sticker",
-        "value": 0
-    },
+   
     {
         "name": "Walking Stick Nymph",
         "image": "walking_stick_nymph",
