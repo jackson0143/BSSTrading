@@ -490,7 +490,7 @@ function Home() {
               </>
             )}
           </div>
-          <div className="flex flex-col gap-4 pt-9 sm:flex-row sm:justify-between">
+          <div className="flex flex-col gap-4 pt-9 lg:flex-row sm:justify-between">
             <div className="flex flex-col sm:flex-row  gap-2  ">
               <h2 className="text-2xl font-bold  tracking-tight text-white flex text-center  pr-3">
                 Cub skins
