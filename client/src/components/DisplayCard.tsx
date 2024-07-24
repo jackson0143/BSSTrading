@@ -6,7 +6,7 @@ const DisplayCard = ({ item, onClick }) => {
 
   return (
     <div
-      className="bg-[#2b2b2b] z-0 rounded-lg p-2 w-40  overflow-hidden"
+      className="bg-[#2b2b2b] z-0 rounded-lg p-2 w-40  overflow-hidden relative"
       onMouseEnter={() => {
         setStyle({ display: "block" });
       }}

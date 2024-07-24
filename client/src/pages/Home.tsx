@@ -496,7 +496,7 @@ function Home() {
                 Cub skins
               </h2>
             </div>
-            <div className="flex flex-col sm:flex-row ">
+            <div className="flex  sm:flex-row ">
               <button
                 type="button"
                 className="px-4  text-sm font-semibold shadow-lg rounded-lg bg-red-400 text-gray-50 hover:text-gray-200 text-center me-2  "
