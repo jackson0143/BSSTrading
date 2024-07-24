@@ -8,7 +8,7 @@ import { beequipOptions } from "../options/beequipOptions";
 import DisplayCard from "../components/DisplayCard";
 import { useState } from "react";
 import DescriptionDialog from "../components/DescriptionDialog";
-
+import ItemDialog from "../components/ItemDialog";
 function Home() {
   const [query, setQuery] = useState("");
 
@@ -18,162 +18,171 @@ function Home() {
       : item.name.split("_").join(" ").toLowerCase().includes(query);
   };
 
-
-  const [dialogState, setDialogState] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
   const [dataFromDialog, setDataFromDialog] = useState(null);
-
-
+  const [isOpen2, setIsOpen2] = useState(false);
+  const [dataFromDialog2, setDataFromDialog2] = useState(null);
+  const [currentBeequip, setCurrentBeequip] = useState();
+  const handleBeequip = (item) => {
+    setCurrentBeequip(item);
+    setIsOpen2(true);
+  };
 
   const [OurInventory, setOurItemQuantities] = useState({
-    cubs: {},
-    vouchers: {},
-
+    cub: {},
+    voucher: {},
     hive: {},
-    stickers: {},
+    sticker: {},
+    beequip: {},
+  });
+  const [TheirInventory, setTheirItemQuantities] = useState({
+    cub: {},
+    voucher: {},
+    hive: {},
+    sticker: {},
     beequip: {},
   });
 
   const resetOurInventory = () => {
     setOurItemQuantities({
-      cubs: {},
-      vouchers: {},
-
+      cub: {},
+      voucher: {},
       hive: {},
-      stickers: {},
+      sticker: {},
       beequip: {},
     });
   };
-  const [TheirInventory, setTheirItemQuantities] = useState({
-    cubs: {},
-    vouchers: {},
-
-    hive: {},
-    stickers: {},
-    beequip: {},
-  });
   const resetTheirInventory = () => {
     setTheirItemQuantities({
-      cubs: {},
-      vouchers: {},
-
+      cub: {},
+      voucher: {},
       hive: {},
-      stickers: {},
+      sticker: {},
       beequip: {},
     });
   };
 
   /*
-    const listtoPrint = ['Autumn_Sunhat', 'Bandage', 'Bang_Snap', 'Bead_Lizard', 'Beesmas_Top', 'Beesmas_Tree_Hat', 'Beret', 'Bottle_Cap', 'Bubble_Light', 'Camo_Bandana', 'Camphor_Lip_Balm', 'Candy_Ring', 'Charm_Bracelet', 'Demon_Talisman', 'Electric_Candle', 'Elf_Cap', 'Festive_Wreath', 'Icicles', 'Kazoo', 'Lei', 'Lump_Of_Coal', 'name_extract.py', 'Paperclip', 'Paper_Angel', 'Peppermint_Antennas', 'Pinecone', 'Pink_Eraser', 'Pink_Shades', 'Poinsettia', 'Reindeer_Antlers', 'Rose_Headband', 'Single_Mitten', 'Smiley_Sticker', 'Snowglobe', 'Snow_Tiara', 'Sweatband', 'Thimble', 'Thumbtack', 'Toy_Drum', 'Toy_Horn', 'Warm_Scarf', 'Whistle']
-    const objectString = listtoPrint.map((name, index) => ({
-      index,
-      name, 
-      type: "beequip", 
-      main_stat:{},
-      main_stat_negative:{},
-      hive_bonus:{}
+  
+    const listtoPrint =['Bee_Cub', 'Brown_Cub', 'Doodle_Cub', 'Gingerbread_Cub', 'name_extract.py', 'Noob_Cub', 'Peppermint_Cub', 'Robo_Cub', 'Snow_Cub', 'Star_Cub', 'Stick_Cub']
+      const objectString = listtoPrint.map((name, index) => ({
+      name: name.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') +" hive",
+      image:name,
+      type: "cub",
+      
+
+      
   
     }))
     console.log(objectString)
     */
-  const handleOurAddItem = (item, type) => {
-    const currentQuantity = OurInventory[type][item] || 0;
+    
+  const handleOurAddItem = (item) => {
+    const {type, name} = item
+    const currentQuantity = OurInventory[type][name] || 0;
     const updatedQuantities = {
       ...OurInventory,
       [type]: {
         ...OurInventory[type],
-        [item]: currentQuantity + 1,
+        [name]: currentQuantity + 1,
       },
     };
     setOurItemQuantities(updatedQuantities);
+    console.log(OurInventory)
   };
 
-  const handleOurRemoveItem = (item, type) => {
-    const currentQuantity = OurInventory[type][item] || 0;
+  const handleOurRemoveItem = (item) => {
+
+    const {type, name} = item
+    const currentQuantity = OurInventory[type][name] || 0;
 
     if (currentQuantity > 0) {
       const updatedQuantities = {
         ...OurInventory,
         [type]: {
           ...OurInventory[type],
-          [item]: currentQuantity - 1,
+          [name]: currentQuantity - 1,
         },
       };
-
-      if (updatedQuantities[type][item] === 0) {
-        delete updatedQuantities[type][item];
+      if (updatedQuantities[type][name] === 0) {
+        delete updatedQuantities[type][name];
       }
-
       setOurItemQuantities(updatedQuantities);
     }
   };
-  const handleTheirAddItem = (item, type) => {
-    const currentQuantity = TheirInventory[type][item] || 0;
+  const handleTheirAddItem = (item) => {
+    const {type, name} = item
+    const currentQuantity = TheirInventory[type][name] || 0;
     const updatedQuantities = {
       ...TheirInventory,
       [type]: {
         ...TheirInventory[type],
-        [item]: currentQuantity + 1,
+        [name]: currentQuantity + 1,
       },
     };
     setTheirItemQuantities(updatedQuantities);
   };
 
-  const handleTheirRemoveItem = (item, type) => {
-    const currentQuantity = TheirInventory[type][item] || 0;
+  const handleTheirRemoveItem = (item) => {
+    const {type, name} = item
+    const currentQuantity = TheirInventory[type][name] || 0;
 
     if (currentQuantity > 0) {
       const updatedQuantities = {
         ...TheirInventory,
         [type]: {
           ...TheirInventory[type],
-          [item]: currentQuantity - 1,
+          [name]: currentQuantity - 1,
         },
       };
 
-      if (updatedQuantities[type][item] === 0) {
-        delete updatedQuantities[type][item];
+      if (updatedQuantities[type][name] === 0) {
+        delete updatedQuantities[type][name];
       }
 
       setTheirItemQuantities(updatedQuantities);
     }
   };
-
+  
   const getAllItems = (team) => {
     const allItems = [];
-
-    Object.keys(team.cubs).forEach((item) => {
-      allItems.push({ type: "cubs", item, count: team.cubs[item] });
+    
+    Object.keys(team.cub).forEach((name) => {
+      allItems.push({ type: "cub", name, count: team.cub[name] });
     });
+   
 
-    Object.keys(team.vouchers).forEach((item) => {
+    Object.keys(team.voucher).forEach((name) => {
       allItems.push({
-        type: "vouchers",
-        item,
-        count: team.vouchers[item],
+        type: "voucher",
+        name,
+        count: team.voucher[name],
       });
     });
 
-    Object.keys(team.hive).forEach((item) => {
-      allItems.push({ type: "hive", item, count: team.hive[item] });
+    Object.keys(team.hive).forEach((name) => {
+      allItems.push({ type: "hive", name, count: team.hive[name] });
     });
 
-    Object.keys(team.stickers).forEach((item) => {
+    Object.keys(team.sticker).forEach((name) => {
       allItems.push({
-        type: "stickers",
-        item,
-        count: team.stickers[item],
+        type: "sticker",
+        name,
+        count: team.sticker[name],
       });
     });
-    Object.keys(team.beequip).forEach((item) => {
+    Object.keys(team.beequip).forEach((name) => {
       allItems.push({
         type: "beequip",
-        item,
-        count: team.beequip[item],
+        name,
+        count: team.beequip[name],
       });
     });
+    
     return allItems;
   };
 
+  
   return (
     <div className="grid grid-cols-12 p-14 gap-8">
       <div className="bg-[#3c3c3c] col-span-5  border rounded-lg shadow-md border-gray-800 p-4">
@@ -190,30 +199,40 @@ function Home() {
             ) : (
               getAllItems(OurInventory).map((item) => (
                 <DisplayCard
+
                   type={item.type}
-                  title={item.item}
+                  name={item.name}
                   count={item.count}
-                  onClick={() => handleOurRemoveItem(item.item, item.type)}
+                  onClick={() => handleOurRemoveItem(item)}
                 />
               ))
             )}
           </div>
-            
-          
-          {dataFromDialog!= null ? (
-              <div className=" ml-1 rounded-md pl-4 py-2 mt-4 bg-[#565656] w-3/4">
-               NOTE: {dataFromDialog}
-              </div>
-            ):null}
-          <DescriptionDialog open={dialogState} setOpen = {setDialogState} sendDataToParent={setDataFromDialog} ></DescriptionDialog>
-      
+
+          {dataFromDialog != null ? (
+            <div className=" ml-1 rounded-md pl-4 py-2 mt-4 bg-[#565656] w-3/4">
+              NOTE: {dataFromDialog}
+            </div>
+          ) : null}
+          <DescriptionDialog
+            open={isOpen}
+            setOpen={setIsOpen}
+            onSubmit={setDataFromDialog}
+          ></DescriptionDialog>
+
           {/* Cub skins text + search bar */}
           <div className="flex pt-9 justify-between">
-            <div className = "flex ">
+            <div className="flex ">
               <h2 className="text-2xl font-bold  tracking-tight text-white flex text-center items-center  pr-3">
                 Cub skins
               </h2>
-              <button type="button" onClick={ ()=> setDialogState(true)}className="text-white  bg-gray-800 hover:bg-gray-700 font-medium rounded-lg text-sm px-3 ">Add description</button>
+              <button
+                type="button"
+                onClick={() => setIsOpen(true)}
+                className="text-white  bg-gray-800 hover:bg-gray-700 font-medium rounded-lg text-sm px-3 "
+              >
+                Add description
+              </button>
             </div>
             <div className="flex">
               {" "}
@@ -256,9 +275,8 @@ function Home() {
           <div className="flex flex-wrap gap-4 mt-4">
             {cubOptions.filter(search).map((item) => (
               <ItemCard
-                type={item.type}
-                title={item.name}
-                onClick={() => handleOurAddItem(item.name, item.type)}
+                item = {item}
+                onClick={() => handleOurAddItem(item)}
               />
             ))}
           </div>
@@ -270,9 +288,8 @@ function Home() {
           <div className="flex flex-wrap gap-4 mt-4">
             {voucherOptions.filter(search).map((item) => (
               <ItemCard
-                type={item.type}
-                title={item.name}
-                onClick={() => handleOurAddItem(item.name, item.type)}
+               item = {item}
+                onClick={() => handleOurAddItem(item)}
               />
             ))}
           </div>
@@ -280,12 +297,17 @@ function Home() {
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl pt-9">
             Beequips
           </h2>
+          <ItemDialog
+            beequip={currentBeequip}
+            open={isOpen2}
+            setOpen={setIsOpen2}
+            onSubmit={setDataFromDialog2}
+          ></ItemDialog>
           <div className="flex flex-wrap gap-4 mt-4">
             {beequipOptions.filter(search).map((item) => (
               <ItemCard
-                type={item.type}
-                title={item.name}
-                onClick={() => handleOurAddItem(item.name, item.type)}
+               item = {item}
+                onClick={() => handleBeequip(item)}
               />
             ))}
           </div>
@@ -296,10 +318,9 @@ function Home() {
           </h2>
           <div className="flex flex-wrap gap-4 mt-4">
             {hiveOptions.filter(search).map((item) => (
-              <ItemCard
-                type={item.type}
-                title={item.name}
-                onClick={() => handleOurAddItem(item.name, item.type)}
+                            <ItemCard
+               item = {item}
+                onClick={() => handleOurAddItem(item)}
               />
             ))}
           </div>
@@ -310,10 +331,9 @@ function Home() {
           </h2>
           <div className="flex flex-wrap gap-4 mt-4">
             {stickerOptions.filter(search).map((item) => (
-              <ItemCard
-                type={item.type}
-                title={item.name}
-                onClick={() => handleOurAddItem(item.name, item.type)}
+                            <ItemCard
+               item = {item}
+                onClick={() => handleOurAddItem(item)}
               />
             ))}
           </div>
@@ -324,7 +344,7 @@ function Home() {
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          stroke-width="1.5"
+          strokeWidth="1.5"
           stroke="currentColor"
           className="size-48"
         >
@@ -344,6 +364,8 @@ function Home() {
           <div className="flex justify-center text-green-500 custom mb-4 text-3xl font-bold">
             LOOKING FOR
           </div>
+
+          
           <div className="flex flex-wrap gap-3 pl-2 py-2 mt-4 bg-[#565656] border rounded-lg">
             {getAllItems(TheirInventory).length === 0 ? (
               <div className="text-white px-4 py-[38px] text-xl">
@@ -352,21 +374,21 @@ function Home() {
             ) : (
               getAllItems(TheirInventory).map((item) => (
                 <DisplayCard
+
                   type={item.type}
-                  title={item.item}
+                  name={item.name}
                   count={item.count}
-                  onClick={() => handleTheirRemoveItem(item.item, item.type)}
+                  onClick={() => handleTheirRemoveItem(item)}
                 />
               ))
             )}
           </div>
-          
+            
           <div className="flex pt-9 justify-between">
-            <div className = "flex">
+            <div className="flex">
               <h2 className="text-2xl font-bold tracking-tight text-white  pr-4">
                 Cub skins
               </h2>
-           
             </div>
             <div className="flex">
               {" "}
@@ -408,10 +430,9 @@ function Home() {
 
           <div className="flex flex-wrap gap-4 mt-4">
             {cubOptions.filter(search).map((item) => (
-              <ItemCard
-                type={item.type}
-                title={item.name}
-                onClick={() => handleTheirAddItem(item.name, item.type)}
+                            <ItemCard
+               item = {item}
+                onClick={() => handleTheirAddItem(item)}
               />
             ))}
           </div>
@@ -422,10 +443,9 @@ function Home() {
           </h2>
           <div className="flex flex-wrap gap-4 mt-4">
             {voucherOptions.filter(search).map((item) => (
-              <ItemCard
-                type={item.type}
-                title={item.name}
-                onClick={() => handleTheirAddItem(item.name, item.type)}
+                            <ItemCard
+               item = {item}
+                onClick={() => handleTheirAddItem(item)}
               />
             ))}
           </div>
@@ -436,10 +456,9 @@ function Home() {
           </h2>
           <div className="flex flex-wrap gap-4 mt-4">
             {beequipOptions.filter(search).map((item) => (
-              <ItemCard
-                type={item.type}
-                title={item.name}
-                onClick={() => handleTheirAddItem(item.name, item.type)}
+                            <ItemCard
+               item = {item}
+                onClick={() => handleTheirAddItem(item)}
               />
             ))}
           </div>
@@ -449,10 +468,9 @@ function Home() {
           </h2>
           <div className="flex flex-wrap gap-4 mt-4">
             {hiveOptions.filter(search).map((item) => (
-              <ItemCard
-                type={item.type}
-                title={item.name}
-                onClick={() => handleTheirAddItem(item.name, item.type)}
+                            <ItemCard
+               item = {item}
+                onClick={() => handleTheirAddItem(item)}
               />
             ))}
           </div>
@@ -463,10 +481,9 @@ function Home() {
           </h2>
           <div className="flex flex-wrap gap-4 mt-4">
             {stickerOptions.filter(search).map((item) => (
-              <ItemCard
-                type={item.type}
-                title={item.name}
-                onClick={() => handleTheirAddItem(item.name, item.type)}
+                            <ItemCard
+               item = {item}
+                onClick={() => handleTheirAddItem(item)}
               />
             ))}
           </div>

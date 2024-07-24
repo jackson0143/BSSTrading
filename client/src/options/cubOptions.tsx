@@ -1,56 +1,57 @@
 export const cubOptions =[
     {
-        "index": 1,
-        "name": "Bee_Cub",
-        "type": "cubs",
-        "value": 0
+        "name": "Bee Cub hive",
+        "image": "Bee_Cub",
+        "type": "cub"
     },
     {
-        "index": 2,
-        "name": "Brown_Cub",
-        "type": "cubs",
-        "value": 0
+        "name": "Brown Cub hive",
+        "image": "Brown_Cub",
+        "type": "cub"
     },
     {
-        "index": 3,
-        "name": "Doodle_Cub",
-        "type": "cubs",
-        "value": 0
+        "name": "Doodle Cub hive",
+        "image": "Doodle_Cub",
+        "type": "cub"
     },
     {
-        "index": 4,
-        "name": "Gingerbread_Cub",
-        "type": "cubs",
-        "value": 0
+        "name": "Gingerbread Cub hive",
+        "image": "Gingerbread_Cub",
+        "type": "cub"
     },
     {
-        "index": 5,
-        "name": "Peppermint_Cub",
-        "type": "cubs",
-        "value": 0
+        "name": "Name Extract.py hive",
+        "image": "name_extract.py",
+        "type": "cub"
     },
     {
-        "index": 6,
-        "name": "Robo_Cub",
-        "type": "cubs",
-        "value": 0
+        "name": "Noob Cub hive",
+        "image": "Noob_Cub",
+        "type": "cub"
     },
     {
-        "index": 7,
-        "name": "Snow_Cub",
-        "type": "cubs",
-        "value": 0
+        "name": "Peppermint Cub hive",
+        "image": "Peppermint_Cub",
+        "type": "cub"
     },
     {
-        "index": 8,
-        "name": "Star_Cub",
-        "type": "cubs",
-        "value": 0
+        "name": "Robo Cub hive",
+        "image": "Robo_Cub",
+        "type": "cub"
     },
     {
-        "index": 9,
-        "name": "Stick_Cub",
-        "type": "cubs",
-        "value": 0
+        "name": "Snow Cub hive",
+        "image": "Snow_Cub",
+        "type": "cub"
+    },
+    {
+        "name": "Star Cub hive",
+        "image": "Star_Cub",
+        "type": "cub"
+    },
+    {
+        "name": "Stick Cub hive",
+        "image": "Stick_Cub",
+        "type": "cub"
     }
 ]

@@ -11,8 +11,8 @@ function Navbar() {
             <a
               type="button"
               className="flex items-center bg-[#7289da]  hover:bg-[#7289da]/90 rounded-lg  font-medium  text-lg hover:bg-gray-200 shadow-lg  px-5 py-2.5 me-2 mb-2  "
-              target="_blank"
-              href="https://discord.gg/tZ5C5hu5uX"
+  
+              href="https://discord.com/oauth2/authorize?client_id=1265274593694711883&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2Fdiscord%2Fredirect&scope=identify"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -1,11 +1,8 @@
 import { useState } from "react";
 
-const DisplayCard = ({ title, type, count = 0, onClick }) => {
+const DisplayCard = ({ name, type, count = 0, onClick }) => {
   const [style, setStyle] = useState({ display: "none" });
-  const titlesplitted = title
-    .split("_")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
+
   
   return (
     <div
@@ -26,15 +23,15 @@ const DisplayCard = ({ title, type, count = 0, onClick }) => {
 
         </button>
         <img
-          src={`./${type}/${title}.png`}
+          src={`./${type}/${name}.png`}
           className="rounded-md my-2"
           width={60}
           height={60}
-          alt={titlesplitted}
+          alt={name}
         />
 
         <div className="flex ">
-          <div className="text-white text-sm font-semibold">{titlesplitted}</div>
+          <div className="text-white text-sm font-semibold">{name}</div>
           <div className="text-green-400 text-sm font-bold pl-2">{count}</div>
         </div>
       </div>

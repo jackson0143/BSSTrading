@@ -2,13 +2,13 @@
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
 import { useState } from 'react'
 
-function DescriptionDialog({ open, setOpen, sendDataToParent }) {
+function DescriptionDialog({ open, setOpen, onSubmit }) {
   
     const [description, setDescription] = useState("")
 
     function handleClick(){
 
-        sendDataToParent(description)
+        onSubmit(description)
         setOpen(false)
     }
     return (

@@ -1,1184 +1,1580 @@
 export const stickerOptions = [
     {
-        "index": 1,
-        "name": "cancer_star_sign",
-        "type": "stickers",
+        "name": "4-pronged Vector Bee",
+        "image": "4-pronged_vector_bee",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 2,
-        "name": "capricorn_star_sign",
-        "type": "stickers",
+        "name": "Abstract Color Painting",
+        "image": "abstract_color_painting",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 3,
-        "name": "aquarius_star_sign",
-        "type": "stickers",
+        "name": "Afk",
+        "image": "afk",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 4,
-        "name": "aries_star_sign",
-        "type": "stickers",
+        "name": "Alert Icon",
+        "image": "alert_icon",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 5,
-        "name": "gemini_star_sign",
-        "type": "stickers",
+        "name": "Ant Field Stamp",
+        "image": "ant_field_stamp",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 6,
-        "name": "virgo_star_sign",
-        "type": "stickers",
+        "name": "Aquarius Star Sign",
+        "image": "aquarius_star_sign",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 7,
-        "name": "taurus_star_sign",
-        "type": "stickers",
+        "name": "Aries Star Sign",
+        "image": "aries_star_sign",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 8,
-        "name": "scorpio_star_sign",
-        "type": "stickers",
+        "name": "Atom Symbol",
+        "image": "atom_symbol",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 9,
-        "name": "sagittarius_star_sign",
-        "type": "stickers",
+        "name": "Auryn",
+        "image": "auryn",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 10,
-        "name": "pisces_star_sign",
-        "type": "stickers",
+        "name": "Bamboo Field Stamp",
+        "image": "bamboo_field_stamp",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 11,
-        "name": "leo_star_sign",
-        "type": "stickers",
+        "name": "Banana Painting",
+        "image": "banana_painting",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 12,
-        "name": "libra_star_sign",
-        "type": "stickers",
+        "name": "Barcode",
+        "image": "barcode",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 13,
-        "name": "4-pronged_vector_bee",
-        "type": "stickers",
+        "name": "Baseball Swing",
+        "image": "baseball_swing",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 14,
-        "name": "abstract_color_painting",
-        "type": "stickers",
+        "name": "Bbm From Below",
+        "image": "bbm_from_below",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 15,
-        "name": "ant_field_stamp",
-        "type": "stickers",
+        "name": "Bear Bee Offer",
+        "image": "bear_bee_offer",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 16,
-        "name": "bamboo_field_stamp",
-        "type": "stickers",
+        "name": "Black Diamond",
+        "image": "black_diamond",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 17,
-        "name": "mountain_top_field_stamp",
-        "type": "stickers",
+        "name": "Black Star",
+        "image": "black_star",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 18,
-        "name": "mushroom_field_stamp",
-        "type": "stickers",
+        "name": "Black Truffle Mushroom",
+        "image": "black_truffle_mushroom",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 19,
-        "name": "pepper_patch_stamp",
-        "type": "stickers",
+        "name": "Blob Bumble Bee",
+        "image": "blob_bumble_bee",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 20,
-        "name": "pineapple_patch_stamp",
-        "type": "stickers",
+        "name": "Blowing Leaf",
+        "image": "blowing_leaf",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 21,
-        "name": "pine_tree_forest_stamp",
-        "type": "stickers",
+        "name": "Blue And Green Marble",
+        "image": "blue_and_green_marble",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 22,
-        "name": "spider_field_stamp",
-        "type": "stickers",
+        "name": "Blue Beesmas Light",
+        "image": "blue_beesmas_light",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 23,
-        "name": "strawberry_field_stamp",
-        "type": "stickers",
+        "name": "Blue Flower Field Stamp",
+        "image": "blue_flower_field_stamp",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 24,
-        "name": "stump_field_stamp",
-        "type": "stickers",
+        "name": "Blue Square",
+        "image": "blue_square",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 25,
-        "name": "atom_symbol",
-        "type": "stickers",
+        "name": "Blue Triangle Critter",
+        "image": "blue_triangle_critter",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 26,
-        "name": "auryn",
-        "type": "stickers",
+        "name": "Bomber Bee Bear",
+        "image": "bomber_bee_bear",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 27,
-        "name": "barcode",
-        "type": "stickers",
+        "name": "Bubble Wand",
+        "image": "bubble_wand",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 28,
-        "name": "baseball_swing",
-        "type": "stickers",
+        "name": "Built Ship",
+        "image": "built_ship",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 29,
-        "name": "bbm_from_below",
-        "type": "stickers",
+        "name": "Cactus Field Stamp",
+        "image": "cactus_field_stamp",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 30,
-        "name": "bear_bee_offer",
-        "type": "stickers",
+        "name": "Cancer Star Sign",
+        "image": "cancer_star_sign",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 31,
-        "name": "black_star",
-        "type": "stickers",
+        "name": "Capricorn Star Sign",
+        "image": "capricorn_star_sign",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 32,
-        "name": "black_truffle_mushroom",
-        "type": "stickers",
+        "name": "Chanterelle Mushroom",
+        "image": "chanterelle_mushroom",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 33,
-        "name": "blob_bumble_bee",
-        "type": "stickers",
+        "name": "Chef Hat Polar Bear",
+        "image": "chef_hat_polar_bear",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 34,
-        "name": "blowing_leaf",
-        "type": "stickers",
+        "name": "Classic Killroy",
+        "image": "classic_killroy",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 35,
-        "name": "blue_and_green_marble",
-        "type": "stickers",
+        "name": "Clippers",
+        "image": "clippers",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 36,
-        "name": "blue_flower_field_stamp",
-        "type": "stickers",
+        "name": "Clover Field Stamp",
+        "image": "clover_field_stamp",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 37,
-        "name": "blue_square",
-        "type": "stickers",
+        "name": "Coconut Field Stamp",
+        "image": "coconut_field_stamp",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 38,
-        "name": "blue_triangle_critter",
-        "type": "stickers",
+        "name": "Coiled Snake",
+        "image": "coiled_snake",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 39,
-        "name": "bomber_bee_bear",
-        "type": "stickers",
+        "name": "Colorful Buttons",
+        "image": "colorful_buttons",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 40,
-        "name": "bubble_wand",
-        "type": "stickers",
+        "name": "Comforting Nectar Icon",
+        "image": "comforting_nectar_icon",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 41,
-        "name": "cactus_field_stamp",
-        "type": "stickers",
+        "name": "Cool Backpack",
+        "image": "cool_backpack",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 42,
-        "name": "chanterelle_mushroom",
-        "type": "stickers",
+        "name": "Cop And Robber",
+        "image": "cop_and_robber",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 43,
-        "name": "chef_hat_polar_bear",
-        "type": "stickers",
+        "name": "Cordate Leaf",
+        "image": "cordate_leaf",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 44,
-        "name": "classic_killroy",
-        "type": "stickers",
+        "name": "Critter In A Stocking",
+        "image": "critter_in_a_stocking",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 45,
-        "name": "clover_field_stamp",
-        "type": "stickers",
+        "name": "Cunate Leaf",
+        "image": "cunate_leaf",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 46,
-        "name": "coconut_field_stamp",
-        "type": "stickers",
+        "name": "Cyan Decorative Border",
+        "image": "cyan_decorative_border",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 47,
-        "name": "coiled_snake",
-        "type": "stickers",
+        "name": "Cyan Hilted Sword",
+        "image": "cyan_hilted_sword",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 48,
-        "name": "cordate_leaf",
-        "type": "stickers",
+        "name": "Cyan Star",
+        "image": "cyan_star",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 49,
-        "name": "critter_in_a_stocking",
-        "type": "stickers",
+        "name": "Dandelion Field Stamp",
+        "image": "dandelion_field_stamp",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 50,
-        "name": "cunate_leaf",
-        "type": "stickers",
+        "name": "Dapper From Above",
+        "image": "dapper_from_above",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 51,
-        "name": "cyan_decorative_border",
-        "type": "stickers",
+        "name": "Dark Flame",
+        "image": "dark_flame",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 52,
-        "name": "cyan_hilted_sword",
-        "type": "stickers",
+        "name": "Dark Scythe",
+        "image": "dark_scythe",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 53,
-        "name": "cyan_star",
-        "type": "stickers",
+        "name": "Desperate Booth",
+        "image": "desperate_booth",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 54,
-        "name": "dandelion_field_stamp",
-        "type": "stickers",
+        "name": "Diamond Cluster",
+        "image": "diamond_cluster",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 55,
-        "name": "dapper_from_above",
-        "type": "stickers",
+        "name": "Diamond Diamond Bee",
+        "image": "diamond_diamond_bee",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 56,
-        "name": "dark_flame",
-        "type": "stickers",
+        "name": "Diamond Trim",
+        "image": "diamond_trim",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 57,
-        "name": "desperate_booth",
-        "type": "stickers",
+        "name": "Doodle S",
+        "image": "doodle_s",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 58,
-        "name": "diamond_cluster",
-        "type": "stickers",
+        "name": "Drooping Stubborn Bee",
+        "image": "drooping_stubborn_bee",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 59,
-        "name": "diamond_diamond_bee",
-        "type": "stickers",
+        "name": "Eighth Note",
+        "image": "eighth_note",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 60,
-        "name": "diamond_trim",
-        "type": "stickers",
+        "name": "Electro-magnet",
+        "image": "electro-magnet",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 61,
-        "name": "eighth_note",
-        "type": "stickers",
+        "name": "Elliptic Leaf",
+        "image": "elliptic_leaf",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 62,
-        "name": "elliptic_leaf",
-        "type": "stickers",
+        "name": "Eviction",
+        "image": "eviction",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 63,
-        "name": "festive_pufferfish",
-        "type": "stickers",
+        "name": "Evil Pig",
+        "image": "evil_pig",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 64,
-        "name": "flying_bee_bear",
-        "type": "stickers",
+        "name": "Festive Pea",
+        "image": "festive_pea",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 65,
-        "name": "flying_festive_bee",
-        "type": "stickers",
+        "name": "Festive Pufferfish",
+        "image": "festive_pufferfish",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 66,
-        "name": "flying_magenta_critter",
-        "type": "stickers",
+        "name": "Flying Bee Bear",
+        "image": "flying_bee_bear",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 67,
-        "name": "flying_ninja_bee",
-        "type": "stickers",
+        "name": "Flying Brave Bee",
+        "image": "flying_brave_bee",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 68,
-        "name": "flying_rad_bee",
-        "type": "stickers",
+        "name": "Flying Festive Bee",
+        "image": "flying_festive_bee",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 69,
-        "name": "fly_agaric_mushroom",
-        "type": "stickers",
+        "name": "Flying Magenta Critter",
+        "image": "flying_magenta_critter",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 70,
-        "name": "fork_and_knife",
-        "type": "stickers",
+        "name": "Flying Ninja Bee",
+        "image": "flying_ninja_bee",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 71,
-        "name": "forward_facing_aphid",
-        "type": "stickers",
+        "name": "Flying Photon Bee",
+        "image": "flying_photon_bee",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 72,
-        "name": "forward_facing_spider",
-        "type": "stickers",
+        "name": "Flying Rad Bee",
+        "image": "flying_rad_bee",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 73,
-        "name": "fuzz_bomb",
-        "type": "stickers",
+        "name": "Fly Agaric Mushroom",
+        "image": "fly_agaric_mushroom",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 74,
-        "name": "gamer_chat_icon",
-        "type": "stickers",
+        "name": "Fork And Knife",
+        "image": "fork_and_knife",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 75,
-        "name": "giraffe",
-        "type": "stickers",
+        "name": "Forward Facing Aphid",
+        "image": "forward_facing_aphid",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 76,
-        "name": "glowering_gummy_bear",
-        "type": "stickers",
+        "name": "Forward Facing Spider",
+        "image": "forward_facing_spider",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 77,
-        "name": "golden_rake",
-        "type": "stickers",
+        "name": "Fuzz Bomb",
+        "image": "fuzz_bomb",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 78,
-        "name": "green_circle",
-        "type": "stickers",
+        "name": "Gamer Chat Icon",
+        "image": "gamer_chat_icon",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 79,
-        "name": "green_plus_sign",
-        "type": "stickers",
+        "name": "Gemini Star Sign",
+        "image": "gemini_star_sign",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 80,
-        "name": "green_sell",
-        "type": "stickers",
+        "name": "Giraffe",
+        "image": "giraffe",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 81,
-        "name": "grey_diamond_logo",
-        "type": "stickers",
+        "name": "Glowering Gummy Bear",
+        "image": "glowering_gummy_bear",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 82,
-        "name": "grey_raining_cloud",
-        "type": "stickers",
+        "name": "Glowing Smile",
+        "image": "glowing_smile",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 83,
-        "name": "grey_shape_companion",
-        "type": "stickers",
+        "name": "Golden Rake",
+        "image": "golden_rake",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 84,
-        "name": "gummyballer",
-        "type": "stickers",
+        "name": "Green Beesmas Light",
+        "image": "green_beesmas_light",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 85,
-        "name": "honey_dipper",
-        "type": "stickers",
+        "name": "Green Check Mark",
+        "image": "green_check_mark",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 86,
-        "name": "hourglass",
-        "type": "stickers",
+        "name": "Green Circle",
+        "image": "green_circle",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 87,
-        "name": "ionic_column_top",
-        "type": "stickers",
+        "name": "Green Plus Sign",
+        "image": "green_plus_sign",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 88,
-        "name": "jack-o-lantern",
-        "type": "stickers",
+        "name": "Green Sell",
+        "image": "green_sell",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 89,
-        "name": "lanceolate_leaf",
-        "type": "stickers",
+        "name": "Grey Diamond Logo",
+        "image": "grey_diamond_logo",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 90,
-        "name": "launching_rocket",
-        "type": "stickers",
+        "name": "Grey Raining Cloud",
+        "image": "grey_raining_cloud",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 91,
-        "name": "left_facing_ant",
-        "type": "stickers",
+        "name": "Grey Shape Companion",
+        "image": "grey_shape_companion",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 92,
-        "name": "left_mythic_gem_fleuron",
-        "type": "stickers",
+        "name": "Gummyballer",
+        "image": "gummyballer",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 93,
-        "name": "left_shining_diamond_fleuron",
-        "type": "stickers",
+        "name": "Happy Fish",
+        "image": "happy_fish",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 94,
-        "name": "lightning",
-        "type": "stickers",
+        "name": "Hastate Leaf",
+        "image": "hastate_leaf",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 95,
-        "name": "little_scorpion",
-        "type": "stickers",
+        "name": "Honey Bee Bear",
+        "image": "honey_bee_bear",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 96,
-        "name": "lyrate_leaf",
-        "type": "stickers",
+        "name": "Honey Dipper",
+        "image": "honey_dipper",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 97,
-        "name": "menacing_mantis",
-        "type": "stickers",
+        "name": "Hourglass",
+        "image": "hourglass",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 98,
-        "name": "morel_mushroom",
-        "type": "stickers",
+        "name": "Hub Field Stamp",
+        "image": "hub_field_stamp",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 99,
-        "name": "motivating_nectar_icon",
-        "type": "stickers",
+        "name": "Interrobang Block",
+        "image": "interrobang_block",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 100,
-        "name": "mythic_m",
-        "type": "stickers",
+        "name": "Invigorating Nectar Icon",
+        "image": "invigorating_nectar_icon",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 101,
-        "name": "nessie",
-        "type": "stickers",
+        "name": "Ionic Column Base",
+        "image": "ionic_column_base",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 102,
-        "name": "oblique_leaf",
-        "type": "stickers",
+        "name": "Ionic Column Middle",
+        "image": "ionic_column_middle",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 103,
-        "name": "orange_green_tri_deco",
-        "type": "stickers",
+        "name": "Ionic Column Top",
+        "image": "ionic_column_top",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 104,
-        "name": "orange_leg_critter",
-        "type": "stickers",
+        "name": "Jack-o-lantern",
+        "image": "jack-o-lantern",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 105,
-        "name": "orange_step_array",
-        "type": "stickers",
+        "name": "Killroy With Hair",
+        "image": "killroy_with_hair",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 106,
-        "name": "orange_swirled_marble",
-        "type": "stickers",
+        "name": "Lanceolate Leaf",
+        "image": "lanceolate_leaf",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 107,
-        "name": "orphan_dog",
-        "type": "stickers",
+        "name": "Launching Rocket",
+        "image": "launching_rocket",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 108,
-        "name": "pale_heart",
-        "type": "stickers",
+        "name": "Left Facing Ant",
+        "image": "left_facing_ant",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 109,
-        "name": "palm_tree",
-        "type": "stickers",
+        "name": "Left Gold Swirl Fleuron",
+        "image": "left_gold_swirl_fleuron",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 110,
-        "name": "panicked_science_bear",
-        "type": "stickers",
+        "name": "Left Mythic Gem Fleuron",
+        "image": "left_mythic_gem_fleuron",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 111,
-        "name": "party_robo_bear",
-        "type": "stickers",
+        "name": "Left Shining Diamond Fleuron",
+        "image": "left_shining_diamond_fleuron",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 112,
-        "name": "peace_sign_hand",
-        "type": "stickers",
+        "name": "Leo Star Sign",
+        "image": "leo_star_sign",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 113,
-        "name": "pearl_girl",
-        "type": "stickers",
+        "name": "Libra Star Sign",
+        "image": "libra_star_sign",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 114,
-        "name": "pink_chair",
-        "type": "stickers",
+        "name": "Lightning",
+        "image": "lightning",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 115,
-        "name": "pink_hive_slot",
-        "type": "stickers",
+        "name": "Little Scorpion",
+        "image": "little_scorpion",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 116,
-        "name": "porcini_mushroom",
-        "type": "stickers",
+        "name": "Lyrate Leaf",
+        "image": "lyrate_leaf",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 117,
-        "name": "precise_eye",
-        "type": "stickers",
+        "name": "Magnet",
+        "image": "magnet",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 118,
-        "name": "prehistoric_hand",
-        "type": "stickers",
+        "name": "Menacing Mantis",
+        "image": "menacing_mantis",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 119,
-        "name": "prismatic_mushroom",
-        "type": "stickers",
+        "name": "Moai",
+        "image": "moai",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 120,
-        "name": "prism_painting",
-        "type": "stickers",
+        "name": "Morel Mushroom",
+        "image": "morel_mushroom",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 121,
-        "name": "pulsar",
-        "type": "stickers",
+        "name": "Motivating Nectar Icon",
+        "image": "motivating_nectar_icon",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 122,
-        "name": "purple_pointed_critter",
-        "type": "stickers",
+        "name": "Mountain Top Field Stamp",
+        "image": "mountain_top_field_stamp",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 123,
-        "name": "pyramid",
-        "type": "stickers",
+        "name": "Mushroom Field Stamp",
+        "image": "mushroom_field_stamp",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 124,
-        "name": "red_doodle_person",
-        "type": "stickers",
+        "name": "Mythic M",
+        "image": "mythic_m",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 125,
-        "name": "red_palm_hand",
-        "type": "stickers",
+        "name": "Name Extract.py",
+        "image": "name_extract.py",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 126,
-        "name": "red_wailing_cry",
-        "type": "stickers",
+        "name": "Nessie",
+        "image": "nessie",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 127,
-        "name": "refreshing_nectar_icon",
-        "type": "stickers",
+        "name": "Oblique Leaf",
+        "image": "oblique_leaf",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 128,
-        "name": "reniform_leaf",
-        "type": "stickers",
+        "name": "Oiler Mushroom",
+        "image": "oiler_mushroom",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 129,
-        "name": "rhomboid_leaf",
-        "type": "stickers",
+        "name": "Orange Green Tri Deco",
+        "image": "orange_green_tri_deco",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 130,
-        "name": "rhubarb",
-        "type": "stickers",
+        "name": "Orange Leg Critter",
+        "image": "orange_leg_critter",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 131,
-        "name": "right_facing_stump_snail",
-        "type": "stickers",
+        "name": "Orange Step Array",
+        "image": "orange_step_array",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 132,
-        "name": "right_gold_swirl_fleuron",
-        "type": "stickers",
+        "name": "Orange Swirled Marble",
+        "image": "orange_swirled_marble",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 133,
-        "name": "right_shining_diamond_fleuron",
-        "type": "stickers",
+        "name": "Orphan Dog",
+        "image": "orphan_dog",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 134,
-        "name": "robot_head",
-        "type": "stickers",
+        "name": "Pale Heart",
+        "image": "pale_heart",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 135,
-        "name": "round_basic_bee",
-        "type": "stickers",
+        "name": "Palm Tree",
+        "image": "palm_tree",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 136,
-        "name": "round_green_critter",
-        "type": "stickers",
+        "name": "Panicked Science Bear",
+        "image": "panicked_science_bear",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 137,
-        "name": "round_rascal_bee",
-        "type": "stickers",
+        "name": "Party Robo Bear",
+        "image": "party_robo_bear",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 138,
-        "name": "royal_bear",
-        "type": "stickers",
+        "name": "Peace Sign Hand",
+        "image": "peace_sign_hand",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 139,
-        "name": "royal_symbol",
-        "type": "stickers",
+        "name": "Pearl Girl",
+        "image": "pearl_girl",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 140,
-        "name": "rubber_duck",
-        "type": "stickers",
+        "name": "Pepper Patch Stamp",
+        "image": "pepper_patch_stamp",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 141,
-        "name": "satisfying_nectar_icon",
-        "type": "stickers",
+        "name": "Petal Wand",
+        "image": "petal_wand",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 142,
-        "name": "saturn",
-        "type": "stickers",
+        "name": "Pineapple Patch Stamp",
+        "image": "pineapple_patch_stamp",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 143,
-        "name": "scissors",
-        "type": "stickers",
+        "name": "Pine Tree Forest Stamp",
+        "image": "pine_tree_forest_stamp",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 144,
-        "name": "scooper",
-        "type": "stickers",
+        "name": "Pink Chair",
+        "image": "pink_chair",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 145,
-        "name": "scythe",
-        "type": "stickers",
+        "name": "Pink Cupcake",
+        "image": "pink_cupcake",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 146,
-        "name": "shiitake_mushroom",
-        "type": "stickers",
+        "name": "Pink Hive Slot",
+        "image": "pink_hive_slot",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 147,
-        "name": "shining_halo",
-        "type": "stickers",
+        "name": "Pisces Star Sign",
+        "image": "pisces_star_sign",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 148,
-        "name": "shining_star",
-        "type": "stickers",
+        "name": "Pizza Delivery Man",
+        "image": "pizza_delivery_man",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 149,
-        "name": "shocked_hive_slot",
-        "type": "stickers",
+        "name": "Play Button",
+        "image": "play_button",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 150,
-        "name": "shrugging_heart",
-        "type": "stickers",
+        "name": "Porcelain Dipper",
+        "image": "porcelain_dipper",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 151,
-        "name": "sideways_spirit_bear",
-        "type": "stickers",
+        "name": "Porcini Mushroom",
+        "image": "porcini_mushroom",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 152,
-        "name": "simple_cloud",
-        "type": "stickers",
+        "name": "Precise Eye",
+        "image": "precise_eye",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 153,
-        "name": "simple_mountain",
-        "type": "stickers",
+        "name": "Prehistoric Boar",
+        "image": "prehistoric_boar",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 154,
-        "name": "simple_skyscraper",
-        "type": "stickers",
+        "name": "Prehistoric Hand",
+        "image": "prehistoric_hand",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 155,
-        "name": "sitting_green_shirt_bear",
-        "type": "stickers",
+        "name": "Prismatic Mushroom",
+        "image": "prismatic_mushroom",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 156,
-        "name": "small_blue_chick",
-        "type": "stickers",
+        "name": "Prism Painting",
+        "image": "prism_painting",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 157,
-        "name": "small_flame",
-        "type": "stickers",
+        "name": "Pulsar",
+        "image": "pulsar",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 158,
-        "name": "small_pink_tulip",
-        "type": "stickers",
+        "name": "Pumpkin Patch Stamp",
+        "image": "pumpkin_patch_stamp",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 159,
-        "name": "small_shield",
-        "type": "stickers",
+        "name": "Purple 4-point Flower",
+        "image": "purple_4-point_flower",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 160,
-        "name": "small_tickseed",
-        "type": "stickers",
+        "name": "Purple Fleuron",
+        "image": "purple_fleuron",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 161,
-        "name": "small_white_daisy",
-        "type": "stickers",
+        "name": "Purple Pointed Critter",
+        "image": "purple_pointed_critter",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 162,
-        "name": "spatulate_leaf",
-        "type": "stickers",
+        "name": "Pyramid",
+        "image": "pyramid",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 163,
-        "name": "spore_covered_puffshroom",
-        "type": "stickers",
+        "name": "Rake",
+        "image": "rake",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 164,
-        "name": "squashed_head_bear",
-        "type": "stickers",
+        "name": "Red Beesmas Light",
+        "image": "red_beesmas_light",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 165,
-        "name": "standing_bean_bug",
-        "type": "stickers",
+        "name": "Red Doodle Person",
+        "image": "red_doodle_person",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 166,
-        "name": "standing_beekeeper",
-        "type": "stickers",
+        "name": "Red Palm Hand",
+        "image": "red_palm_hand",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 167,
-        "name": "standing_caterpillar",
-        "type": "stickers",
+        "name": "Red Wailing Cry",
+        "image": "red_wailing_cry",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 168,
-        "name": "super-scooper",
-        "type": "stickers",
+        "name": "Red X",
+        "image": "red_x",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 169,
-        "name": "tabby_from_behind",
-        "type": "stickers",
+        "name": "Refreshing Nectar Icon",
+        "image": "refreshing_nectar_icon",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 170,
-        "name": "tabby_scratch",
-        "type": "stickers",
+        "name": "Reniform Leaf",
+        "image": "reniform_leaf",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 171,
-        "name": "tadpole",
-        "type": "stickers",
+        "name": "Rhomboid Leaf",
+        "image": "rhomboid_leaf",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 172,
-        "name": "theatrical_intruder",
-        "type": "stickers",
+        "name": "Rhubarb",
+        "image": "rhubarb",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 173,
-        "name": "thumbs_up_hand",
-        "type": "stickers",
+        "name": "Right Facing Stump Snail",
+        "image": "right_facing_stump_snail",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 174,
-        "name": "tide_popper",
-        "type": "stickers",
+        "name": "Right Gold Swirl Fleuron",
+        "image": "right_gold_swirl_fleuron",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 175,
-        "name": "tiny_house",
-        "type": "stickers",
+        "name": "Right Mythic Gem Fleuron",
+        "image": "right_mythic_gem_fleuron",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 176,
-        "name": "tnt",
-        "type": "stickers",
+        "name": "Right Shining Diamond Fleuron",
+        "image": "right_shining_diamond_fleuron",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 177,
-        "name": "tornado",
-        "type": "stickers",
+        "name": "Robot Head",
+        "image": "robot_head",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 178,
-        "name": "tough_potato",
-        "type": "stickers",
+        "name": "Rose Field Stamp",
+        "image": "rose_field_stamp",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 179,
-        "name": "traffic_light",
-        "type": "stickers",
+        "name": "Round Basic Bee",
+        "image": "round_basic_bee",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 180,
-        "name": "triple_exclamation",
-        "type": "stickers",
+        "name": "Round Green Critter",
+        "image": "round_green_critter",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 181,
-        "name": "uplooking_bear",
-        "type": "stickers",
+        "name": "Round Rascal Bee",
+        "image": "round_rascal_bee",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 182,
-        "name": "vacuum",
-        "type": "stickers",
+        "name": "Royal Bear",
+        "image": "royal_bear",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 183,
-        "name": "wall_crack",
-        "type": "stickers",
+        "name": "Royal Symbol",
+        "image": "royal_symbol",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 184,
-        "name": "waving_townsperson",
-        "type": "stickers",
+        "name": "Rubber Duck",
+        "image": "rubber_duck",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 185,
-        "name": "waxing_crescent_moon",
-        "type": "stickers",
+        "name": "Sagittarius Star Sign",
+        "image": "sagittarius_star_sign",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 186,
-        "name": "white_button_mushroom",
-        "type": "stickers",
+        "name": "Satisfying Nectar Icon",
+        "image": "satisfying_nectar_icon",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 187,
-        "name": "white_flag",
-        "type": "stickers",
+        "name": "Saturn",
+        "image": "saturn",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 188,
-        "name": "window",
-        "type": "stickers",
+        "name": "Scissors",
+        "image": "scissors",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 189,
-        "name": "wishbone",
-        "type": "stickers",
+        "name": "Scooper",
+        "image": "scooper",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 190,
-        "name": "wobbly_looker_bee",
-        "type": "stickers",
+        "name": "Scorpio Star Sign",
+        "image": "scorpio_star_sign",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 191,
-        "name": "yellow_left_arrow",
-        "type": "stickers",
+        "name": "Scythe",
+        "image": "scythe",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 192,
-        "name": "yellow_smile",
-        "type": "stickers",
+        "name": "Shiitake Mushroom",
+        "image": "shiitake_mushroom",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 193,
-        "name": "yellow_sticky_hand",
-        "type": "stickers",
+        "name": "Shining Halo",
+        "image": "shining_halo",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 194,
-        "name": "yellow_swirled_marble",
-        "type": "stickers",
+        "name": "Shining Star",
+        "image": "shining_star",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 195,
-        "name": "yellow_umbrella",
-        "type": "stickers",
+        "name": "Shocked Hive Slot",
+        "image": "shocked_hive_slot",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 196,
-        "name": "yellow_walking_wiggly_person",
-        "type": "stickers",
+        "name": "Shrugging Heart",
+        "image": "shrugging_heart",
+        "type": "sticker",
         "value": 0
     },
     {
-        "index": 197,
-        "name": "young_elf",
-        "type": "stickers",
+        "name": "Shy Brown Bear",
+        "image": "shy_brown_bear",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Sideways Spirit Bear",
+        "image": "sideways_spirit_bear",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Silly Tongue",
+        "image": "silly_tongue",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Simple Cloud",
+        "image": "simple_cloud",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Simple Mountain",
+        "image": "simple_mountain",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Simple Skyscraper",
+        "image": "simple_skyscraper",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Simple Sun",
+        "image": "simple_sun",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Sitting Green Shirt Bear",
+        "image": "sitting_green_shirt_bear",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Sitting Mother Bear",
+        "image": "sitting_mother_bear",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Small Blue Chick",
+        "image": "small_blue_chick",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Small Dandelion",
+        "image": "small_dandelion",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Small Flame",
+        "image": "small_flame",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Small Pink Tulip",
+        "image": "small_pink_tulip",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Small Shield",
+        "image": "small_shield",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Small Tickseed",
+        "image": "small_tickseed",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Small White Daisy",
+        "image": "small_white_daisy",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Spark Staff",
+        "image": "spark_staff",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Spatulate Leaf",
+        "image": "spatulate_leaf",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Spider Field Stamp",
+        "image": "spider_field_stamp",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Spore Covered Puffshroom",
+        "image": "spore_covered_puffshroom",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Sprout",
+        "image": "sprout",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Squashed Head Bear",
+        "image": "squashed_head_bear",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Standing Bean Bug",
+        "image": "standing_bean_bug",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Standing Beekeeper",
+        "image": "standing_beekeeper",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Standing Caterpillar",
+        "image": "standing_caterpillar",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Strawberry Field Stamp",
+        "image": "strawberry_field_stamp",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Stretched Head Bear",
+        "image": "stretched_head_bear",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Stump Field Stamp",
+        "image": "stump_field_stamp",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Sunflower Field Stamp",
+        "image": "sunflower_field_stamp",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Super-scooper",
+        "image": "super-scooper",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Tabby From Behind",
+        "image": "tabby_from_behind",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Tabby Scratch",
+        "image": "tabby_scratch",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Tadpole",
+        "image": "tadpole",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Taunting Doodle Person",
+        "image": "taunting_doodle_person",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Taurus Star Sign",
+        "image": "taurus_star_sign",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Theatrical Intruder",
+        "image": "theatrical_intruder",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Thumbs Up Hand",
+        "image": "thumbs_up_hand",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Tide Popper",
+        "image": "tide_popper",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Tiny House",
+        "image": "tiny_house",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Tnt",
+        "image": "tnt",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Tornado",
+        "image": "tornado",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Tough Potato",
+        "image": "tough_potato",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Traffic Light",
+        "image": "traffic_light",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Triple Exclamation",
+        "image": "triple_exclamation",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Uplooking Bear",
+        "image": "uplooking_bear",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Vacuum",
+        "image": "vacuum",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Virgo Star Sign",
+        "image": "virgo_star_sign",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Walking Stick Nymph",
+        "image": "walking_stick_nymph",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Wall Crack",
+        "image": "wall_crack",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Waving Townsperson",
+        "image": "waving_townsperson",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Waxing Crescent Moon",
+        "image": "waxing_crescent_moon",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "White Button Mushroom",
+        "image": "white_button_mushroom",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "White Flag",
+        "image": "white_flag",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Window",
+        "image": "window",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Wishbone",
+        "image": "wishbone",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Wobbly Looker Bee",
+        "image": "wobbly_looker_bee",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Yellow Beesmas Light",
+        "image": "yellow_beesmas_light",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Yellow Coffee Mug",
+        "image": "yellow_coffee_mug",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Yellow Hi",
+        "image": "yellow_hi",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Yellow Left Arrow",
+        "image": "yellow_left_arrow",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Yellow Right Arrow",
+        "image": "yellow_right_arrow",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Yellow Smile",
+        "image": "yellow_smile",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Yellow Sticky Hand",
+        "image": "yellow_sticky_hand",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Yellow Swirled Marble",
+        "image": "yellow_swirled_marble",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Yellow Umbrella",
+        "image": "yellow_umbrella",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Yellow Walking Wiggly Person",
+        "image": "yellow_walking_wiggly_person",
+        "type": "sticker",
+        "value": 0
+    },
+    {
+        "name": "Young Elf",
+        "image": "young_elf",
+        "type": "sticker",
         "value": 0
     }
 ]

@@ -1,68 +1,62 @@
 export const hiveOptions = [
     {
-        "index": 1,
-        "name": "Basic_black",
-        "type": "hive",
-        "value": 0
+        "name": "Basic Black hive",
+        "image": "Basic_black",
+        "type": "hive"
     },
     {
-        "index": 2,
-        "name": "Basic_blue",
-        "type": "hive",
-        "value": 0
+        "name": "Basic Blue hive",
+        "image": "Basic_blue",
+        "type": "hive"
     },
     {
-        "index": 3,
-        "name": "Basic_green",
-        "type": "hive",
-        "value": 0
+        "name": "Basic Green hive",
+        "image": "Basic_green",
+        "type": "hive"
     },
     {
-        "index": 4,
-        "name": "Basic_pink",
-        "type": "hive",
-        "value": 0
+        "name": "Basic Pink hive",
+        "image": "Basic_pink",
+        "type": "hive"
     },
     {
-        "index": 5,
-        "name": "Basic_red",
-        "type": "hive",
-        "value": 0
+        "name": "Basic Red hive",
+        "image": "Basic_red",
+        "type": "hive"
     },
     {
-        "index": 6,
-        "name": "Basic_white",
-        "type": "hive",
-        "value": 0
+        "name": "Basic White hive",
+        "image": "Basic_white",
+        "type": "hive"
     },
     {
-        "index": 7,
-        "name": "Wavy_cyan",
-        "type": "hive",
-        "value": 0
+        "name": "Name Extract.py hive",
+        "image": "name_extract.py",
+        "type": "hive"
     },
     {
-        "index": 8,
-        "name": "Wavy_doodle",
-        "type": "hive",
-        "value": 0
+        "name": "Wavy Cyan hive",
+        "image": "Wavy_cyan",
+        "type": "hive"
     },
     {
-        "index": 9,
-        "name": "Wavy_festive",
-        "type": "hive",
-        "value": 0
+        "name": "Wavy Doodle hive",
+        "image": "Wavy_doodle",
+        "type": "hive"
     },
     {
-        "index": 10,
-        "name": "Wavy_purple",
-        "type": "hive",
-        "value": 0
+        "name": "Wavy Festive hive",
+        "image": "Wavy_festive",
+        "type": "hive"
     },
     {
-        "index": 11,
-        "name": "Wavy_yellow",
-        "type": "hive",
-        "value": 0
+        "name": "Wavy Purple hive",
+        "image": "Wavy_purple",
+        "type": "hive"
+    },
+    {
+        "name": "Wavy Yellow hive",
+        "image": "Wavy_yellow",
+        "type": "hive"
     }
 ]
