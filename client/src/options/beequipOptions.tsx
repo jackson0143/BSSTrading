@@ -123,9 +123,13 @@ export const beequipOptions =[
         "name": "Elf Cap",
         "image": "Elf_Cap",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {"+Convert Amount":"", 
+            "%Convert Rate At Hive":"",
+        },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {"%Convert Rate At Hive":"",
+            "%Honey At Hive":""
+        }
     },
     {
         "name": "Festive Wreath",
@@ -167,14 +171,7 @@ export const beequipOptions =[
         "main_stat_negative": {},
         "hive_bonus": {}
     },
-    {
-        "name": "Name Extract.py",
-        "image": "name_extract.py",
-        "type": "beequip",
-        "main_stat": {},
-        "main_stat_negative": {},
-        "hive_bonus": {}
-    },
+   
     {
         "name": "Paperclip",
         "image": "Paperclip",

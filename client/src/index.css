@@ -10,7 +10,12 @@
 
 }
 
-
+.font-outline-main-stat {
+  -webkit-text-stroke: 1px #2D503B;
+}
+.font-outline-hive-bonus {
+  -webkit-text-stroke: 1px  #7e7445
+}
 
 @tailwind base;
 @tailwind components;

@@ -8,20 +8,20 @@ import { beequipOptions } from "../options/beequipOptions";
 import DisplayCard from "../components/DisplayCard";
 import { useState } from "react";
 import DescriptionDialog from "../components/DescriptionDialog";
+import BeequipDisplayCard from "../components/BeequipDisplayCard";
 import ItemDialog from "../components/ItemDialog";
 function Home() {
-  const [query, setQuery] = useState("");
+  const [ourQuery, setOurQuery] = useState("");
+  const [theirQuery, setTheirQuery] = useState("");
 
-  const search = (item) => {
+  const search = (item, query) => {
     return query.toLowerCase() === ""
       ? item
       : item.name.split("_").join(" ").toLowerCase().includes(query);
   };
-
   const [isOpen, setIsOpen] = useState(false);
   const [dataFromDialog, setDataFromDialog] = useState(null);
   const [isOpen2, setIsOpen2] = useState(false);
-  const [dataFromDialog2, setDataFromDialog2] = useState(null);
   const [currentBeequip, setCurrentBeequip] = useState();
   const handleBeequip = (item) => {
     setCurrentBeequip(item);
@@ -33,14 +33,14 @@ function Home() {
     voucher: {},
     hive: {},
     sticker: {},
-    beequip: {},
+    beequip: [],
   });
   const [TheirInventory, setTheirItemQuantities] = useState({
     cub: {},
     voucher: {},
     hive: {},
     sticker: {},
-    beequip: {},
+    beequip: [],
   });
 
   const resetInventory = (setInventory) => {
@@ -49,77 +49,137 @@ function Home() {
       voucher: {},
       hive: {},
       sticker: {},
-      beequip: {},
+      beequip: [],
     });
   };
-  
-   
-    const handleAddItem = (item, inventory, setInventory) => {
-      const { type, name, image } = item;
-      
-      // Initialize the inventory for the type if it does not exist
-      if (!inventory[type]) {
-          inventory[type] = {};
-      }
-  
-      const currentItem = inventory[type][name] || { quantity: 0, image: '' };
-  
-      const updatedQuantities = {
-          ...inventory,
-          [type]: {
-              ...inventory[type],
-              [name]: {
-                  quantity: currentItem.quantity + 1,
-                  image: image || currentItem.image
-              }
-          }
+
+  const handleAddItem = (item, inventory, setInventory) => {
+    const { type, name, image, main_stat, main_stat_negative, hive_bonus } =
+      item;
+
+    let updatedInventory;
+
+    if (type === "beequip") {
+      // Initialize inventory[type] as an array if it is undefined
+      const beequips = inventory[type] || [];
+
+      // Generate a unique index for the beequip item
+      const idx = beequips.length;
+      const newBeequipItem = {
+        id: idx + 1, // Unique identifier for the beequip item
+        name,
+        image,
+        main_stat,
+        main_stat_negative,
+        hive_bonus,
       };
-      setInventory(updatedQuantities);
+
+      // Add the new beequip item to the list
+      updatedInventory = {
+        ...inventory,
+        [type]: [...beequips, newBeequipItem],
+      };
+    } else {
+      // Initialize inventory[type] as an object if it is undefined
+      const currentItems = inventory[type] || {};
+
+      // Find the current item in the inventory, or create the item if it doesn't already exist
+      const currentItem = currentItems[name] || {
+        quantity: 0,
+        image: "",
+        name: "",
+      };
+
+      updatedInventory = {
+        ...inventory,
+        [type]: {
+          ...currentItems,
+          [name]: {
+            quantity: currentItem.quantity + 1,
+            name: name || currentItem.name,
+            image: image || currentItem.image,
+          },
+        },
+      };
+    }
+
+    setInventory(updatedInventory);
   };
 
   const handleRemoveItem = (item, inventory, setInventory) => {
-    const { type, name } = item;
-    const currentQuantity = inventory[type]?.[name]?.quantity || 0;
+    const { type, name, id } = item;
+    console.log(item);
+    if (type === "beequip") {
+      // Remove the beequip item by filtering out the item from the list
+      const updatedBeequips = inventory[type].filter((equip) => equip.id != id);
 
-    if (currentQuantity > 0) {
+      //update new inventory
+      setInventory({
+        ...inventory,
+        [type]: updatedBeequips,
+      });
+    } else {
+      //Otherwise update other items
+      const currentQuantity = inventory[type]?.[name]?.quantity || 0;
+      if (currentQuantity > 0) {
         const updatedQuantities = {
-            ...inventory,
-            [type]: {
-                ...inventory[type],
-                [name]: {
-                    ...inventory[type][name],
-                    quantity: currentQuantity - 1,
-                },
+          ...inventory,
+          [type]: {
+            ...inventory[type],
+            [name]: {
+              ...inventory[type][name],
+              quantity: currentQuantity - 1,
             },
+          },
         };
-
         if (updatedQuantities[type][name].quantity === 0) {
-            delete updatedQuantities[type][name];
+          delete updatedQuantities[type][name];
         }
         setInventory(updatedQuantities);
+      }
     }
-};
+  };
 
   const getAllItems = (inventory) => {
     const allItems = [];
-    
+
     Object.keys(inventory).forEach((type) => {
-        Object.keys(inventory[type]).forEach((name) => {
-            const item = inventory[type][name];
-            allItems.push({ 
-                type, 
-                name, 
-                quantity: item.quantity, 
-                image: item.image 
-            });
+      if (type === "beequip") {
+        // For 'beequip', we are handling items as an array
+        inventory[type].forEach((item) => {
+          allItems.push({
+            type,
+            name: item.name,
+            image: item.image,
+            id: item.id,
+            main_stat: item.main_stat,
+            main_stat_negative: item.main_stat_negative,
+            hive_bonus: item.hive_bonus,
+          });
         });
+      } else {
+        // For other types, handle items as an object
+        Object.keys(inventory[type]).forEach((name) => {
+          const item = inventory[type][name];
+          allItems.push({
+            type,
+            name: item.name,
+            quantity: item.quantity,
+            image: item.image,
+          });
+        });
+      }
     });
 
     return allItems;
-};
+  };
 
+  /*
 
-/*
+  console.log(OurInventory)
+  console.log(getAllItems(OurInventory))
+  */
+  /*
   
     const listtoPrint =['Bee_Cub', 'Brown_Cub', 'Doodle_Cub', 'Gingerbread_Cub', 'name_extract.py', 'Noob_Cub', 'Peppermint_Cub', 'Robo_Cub', 'Snow_Cub', 'Star_Cub', 'Stick_Cub']
       const objectString = listtoPrint.map((name, index) => ({
@@ -133,7 +193,7 @@ function Home() {
     }))
     console.log(objectString)
     */
-  
+
   return (
     <div className="grid grid-cols-12 p-14 gap-8">
       <div className="bg-[#3c3c3c] col-span-5  border rounded-lg shadow-md border-gray-800 p-4">
@@ -141,23 +201,54 @@ function Home() {
           <div className="flex justify-center custom text-red-500 mb-4 text-3xl font-bold">
             YOUR OFFER
           </div>
-
-          <div className="flex flex-wrap gap-3 pl-2 py-2 mt-4 bg-[#565656] border rounded-lg ">
+          <div className="flex flex-col gap-4 pl-2 py-2 mt-4 bg-[#565656] border rounded-lg">
             {getAllItems(OurInventory).length === 0 ? (
-              <div className="text-white px-4 py-[38px]  text-xxl">
+              <div className="text-white px-4 py-[38px] text-xxl">
                 No items added to the offer
               </div>
             ) : (
-              getAllItems(OurInventory).map((item) => (
-                <DisplayCard
+              <>
+                {/* Display Cards in a row */}
+                <div className="flex flex-wrap gap-3">
+                  {getAllItems(OurInventory)
+                    .filter((item) => item.type !== "beequip")
+                    .map((item) => (
+                      <DisplayCard
+                        key={item.id}
+                        item={item}
+                        onClick={() =>
+                          handleRemoveItem(
+                            item,
+                            OurInventory,
+                            setOurItemQuantities
+                          )
+                        }
+                      />
+                    ))}
+                </div>
 
-                  item = {item}
-                  onClick={() => handleRemoveItem(item, OurInventory, setOurItemQuantities)}
-                />
-              ))
+                {/* Beequip Cards in a new row */}
+                <div className="flex flex-wrap gap-3 mt-4">
+                  {getAllItems(OurInventory)
+                    .filter((item) => item.type === "beequip")
+                    .map((item) => (
+                      <BeequipDisplayCard
+                        key={item.id}
+                        item={item}
+                        onClick={() =>
+                          handleRemoveItem(
+                            item,
+                            OurInventory,
+                            setOurItemQuantities
+                          )
+                        }
+                      />
+                    ))}
+                </div>
+              </>
             )}
           </div>
- 
+
           {dataFromDialog != null ? (
             <div className=" ml-1 rounded-md pl-4 py-2 mt-4 bg-[#565656] w-3/4">
               NOTE: {dataFromDialog}
@@ -168,6 +259,15 @@ function Home() {
             setOpen={setIsOpen}
             onSubmit={setDataFromDialog}
           ></DescriptionDialog>
+
+          <ItemDialog
+            beequip={currentBeequip}
+            open={isOpen2}
+            setOpen={setIsOpen2}
+            handleAddItem={handleAddItem}
+            inventory={OurInventory}
+            setInventory={setOurItemQuantities}
+          ></ItemDialog>
 
           {/* Cub skins text + search bar */}
           <div className="flex pt-9 justify-between">
@@ -188,7 +288,7 @@ function Home() {
               <button
                 type="button"
                 className="px-4   text-sm font-semibold shadow-lg rounded-lg bg-red-400 text-gray-50 hover:text-gray-200 text-center me-2   "
-                onClick={()=> resetInventory(setOurItemQuantities)}
+                onClick={() => resetInventory(setOurItemQuantities)}
               >
                 Clear all
               </button>
@@ -215,19 +315,23 @@ function Home() {
                   type="text"
                   id="search"
                   placeholder="Search something.."
-                  onChange={(e) => setQuery(e.target.value)}
+                  onChange={(e) => setOurQuery(e.target.value)}
                 />
               </div>
             </div>
           </div>
 
           <div className="flex flex-wrap gap-4 mt-4">
-            {cubOptions.filter(search).map((item) => (
-              <ItemCard
-                item = {item}
-                onClick={() => handleAddItem(item, OurInventory, setOurItemQuantities)}
-              />
-            ))}
+            {cubOptions
+              .filter((item) => search(item, ourQuery))
+              .map((item) => (
+                <ItemCard
+                  item={item}
+                  onClick={() =>
+                    handleAddItem(item, OurInventory, setOurItemQuantities)
+                  }
+                />
+              ))}
           </div>
 
           {/* Display Vouchers */}
@@ -235,30 +339,33 @@ function Home() {
             Vouchers
           </h2>
           <div className="flex flex-wrap gap-4 mt-4">
-            {voucherOptions.filter(search).map((item) => (
-              <ItemCard
-               item = {item}
-               onClick={() => handleAddItem(item, OurInventory, setOurItemQuantities)}
-              />
-            ))}
+            {voucherOptions
+              .filter((item) => search(item, ourQuery))
+              .map((item) => (
+                <ItemCard
+                  item={item}
+                  onClick={() =>
+                    handleAddItem(item, OurInventory, setOurItemQuantities)
+                  }
+                />
+              ))}
           </div>
           {/* Display Beequips */}
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl pt-9">
             Beequips
           </h2>
-          <ItemDialog
-            beequip={currentBeequip}
-            open={isOpen2}
-            setOpen={setIsOpen2}
-            onSubmit={setDataFromDialog2}
-          ></ItemDialog>
+
           <div className="flex flex-wrap gap-4 mt-4">
-            {beequipOptions.filter(search).map((item) => (
-              <ItemCard
-               item = {item}
-                onClick={() => handleBeequip(item)}
-              />
-            ))}
+            {beequipOptions
+              .filter((item) => search(item, ourQuery))
+              .map((item) => (
+                <ItemCard
+                  item={item}
+                  onClick={() => {
+                    handleBeequip(item);
+                  }}
+                />
+              ))}
           </div>
 
           {/* Display Hive skins */}
@@ -266,12 +373,16 @@ function Home() {
             Hive skins
           </h2>
           <div className="flex flex-wrap gap-4 mt-4">
-            {hiveOptions.filter(search).map((item) => (
-                            <ItemCard
-               item = {item}
-               onClick={() => handleAddItem(item, OurInventory, setOurItemQuantities)}
-              />
-            ))}
+            {hiveOptions
+              .filter((item) => search(item, ourQuery))
+              .map((item) => (
+                <ItemCard
+                  item={item}
+                  onClick={() =>
+                    handleAddItem(item, OurInventory, setOurItemQuantities)
+                  }
+                />
+              ))}
           </div>
 
           {/* Display Stickers */}
@@ -279,12 +390,16 @@ function Home() {
             Stickers
           </h2>
           <div className="flex flex-wrap gap-4 mt-4">
-            {stickerOptions.filter(search).map((item) => (
-                            <ItemCard
-               item = {item}
-               onClick={() => handleAddItem(item, OurInventory, setOurItemQuantities)}
-              />
-            ))}
+            {stickerOptions
+              .filter((item) => search(item, ourQuery))
+              .map((item) => (
+                <ItemCard
+                  item={item}
+                  onClick={() =>
+                    handleAddItem(item, OurInventory, setOurItemQuantities)
+                  }
+                />
+              ))}
           </div>
         </div>
       </div>
@@ -314,7 +429,6 @@ function Home() {
             LOOKING FOR
           </div>
 
-          
           <div className="flex flex-wrap gap-3 pl-2 py-2 mt-4 bg-[#565656] border rounded-lg">
             {getAllItems(TheirInventory).length === 0 ? (
               <div className="text-white px-4 py-[38px] text-xl">
@@ -323,14 +437,19 @@ function Home() {
             ) : (
               getAllItems(TheirInventory).map((item) => (
                 <DisplayCard
-
-                  item = {item}
-                  onClick={() => handleRemoveItem(item, TheirInventory, setTheirItemQuantities)}
+                  item={item}
+                  onClick={() =>
+                    handleRemoveItem(
+                      item,
+                      TheirInventory,
+                      setTheirItemQuantities
+                    )
+                  }
                 />
               ))
             )}
           </div>
-            
+
           <div className="flex pt-9 justify-between">
             <div className="flex">
               <h2 className="text-2xl font-bold tracking-tight text-white  pr-4">
@@ -342,7 +461,7 @@ function Home() {
               <button
                 type="button"
                 className="px-4  text-sm font-semibold shadow-lg rounded-lg bg-red-400 text-gray-50 hover:text-gray-200 text-center me-2  "
-                onClick={()=> resetInventory(setTheirItemQuantities)}
+                onClick={() => resetInventory(setTheirItemQuantities)}
               >
                 Clear all
               </button>
@@ -369,19 +488,23 @@ function Home() {
                   type="text"
                   id="search"
                   placeholder="Search something.."
-                  onChange={(e) => setQuery(e.target.value)}
+                  onChange={(e) => setTheirQuery(e.target.value)}
                 />
               </div>
             </div>
           </div>
 
           <div className="flex flex-wrap gap-4 mt-4">
-            {cubOptions.filter(search).map((item) => (
-                            <ItemCard
-               item = {item}
-               onClick={() => handleAddItem(item, TheirInventory, setTheirItemQuantities)}
-              />
-            ))}
+            {cubOptions
+              .filter((item) => search(item, theirQuery))
+              .map((item) => (
+                <ItemCard
+                  item={item}
+                  onClick={() =>
+                    handleAddItem(item, TheirInventory, setTheirItemQuantities)
+                  }
+                />
+              ))}
           </div>
 
           {/* Display Vouchers */}
@@ -389,12 +512,16 @@ function Home() {
             Vouchers
           </h2>
           <div className="flex flex-wrap gap-4 mt-4">
-            {voucherOptions.filter(search).map((item) => (
-                            <ItemCard
-               item = {item}
-                onClick={() => handleAddItem(item, TheirInventory, setTheirItemQuantities)}
-              />
-            ))}
+            {voucherOptions
+              .filter((item) => search(item, theirQuery))
+              .map((item) => (
+                <ItemCard
+                  item={item}
+                  onClick={() =>
+                    handleAddItem(item, TheirInventory, setTheirItemQuantities)
+                  }
+                />
+              ))}
           </div>
 
           {/* Display Beequips */}
@@ -402,24 +529,32 @@ function Home() {
             Beequips
           </h2>
           <div className="flex flex-wrap gap-4 mt-4">
-            {beequipOptions.filter(search).map((item) => (
-                            <ItemCard
-               item = {item}
-                onClick={() => handleAddItem(item, TheirInventory, setTheirItemQuantities)}
-              />
-            ))}
+            {beequipOptions
+              .filter((item) => search(item, theirQuery))
+              .map((item) => (
+                <ItemCard
+                  item={item}
+                  onClick={() =>
+                    handleAddItem(item, TheirInventory, setTheirItemQuantities)
+                  }
+                />
+              ))}
           </div>
           {/* Display Hive skins */}
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl pt-9">
             Hive skins
           </h2>
           <div className="flex flex-wrap gap-4 mt-4">
-            {hiveOptions.filter(search).map((item) => (
-                            <ItemCard
-               item = {item}
-                onClick={() => handleAddItem(item, TheirInventory, setTheirItemQuantities)}
-              />
-            ))}
+            {hiveOptions
+              .filter((item) => search(item, theirQuery))
+              .map((item) => (
+                <ItemCard
+                  item={item}
+                  onClick={() =>
+                    handleAddItem(item, TheirInventory, setTheirItemQuantities)
+                  }
+                />
+              ))}
           </div>
 
           {/* Display Stickers */}
@@ -427,12 +562,16 @@ function Home() {
             Stickers
           </h2>
           <div className="flex flex-wrap gap-4 mt-4">
-            {stickerOptions.filter(search).map((item) => (
-                            <ItemCard
-               item = {item}
-                onClick={() => handleAddItem(item, TheirInventory, setTheirItemQuantities)}
-              />
-            ))}
+            {stickerOptions
+              .filter((item) => search(item, theirQuery))
+              .map((item) => (
+                <ItemCard
+                  item={item}
+                  onClick={() =>
+                    handleAddItem(item, TheirInventory, setTheirItemQuantities)
+                  }
+                />
+              ))}
           </div>
         </div>
       </div>

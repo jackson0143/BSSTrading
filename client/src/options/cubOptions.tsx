@@ -19,11 +19,7 @@ export const cubOptions =[
         "image": "Gingerbread_Cub",
         "type": "cub"
     },
-    {
-        "name": "Name Extract.py",
-        "image": "name_extract.py",
-        "type": "cub"
-    },
+
     {
         "name": "Noob Cub",
         "image": "Noob_Cub",
