@@ -124,7 +124,7 @@ export const beequipOptions =[
         "image": "Elf_Cap",
         "type": "beequip",
         "main_stat": {"+Convert Amount":"", 
-            "%Convert Rate At Hive":"",
+            "%Convert At Hive":"",
         },
         "main_stat_negative": {},
         "hive_bonus": {"%Convert Rate At Hive":"",
@@ -200,9 +200,9 @@ export const beequipOptions =[
         "name": "Pinecone",
         "image": "Pinecone",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {"%Convert Amount":""},
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {"%Pine Tree Forest Capacity":"", "%Pine Tree Forest Pollen":""}
     },
     {
         "name": "Pink Eraser",
@@ -248,9 +248,11 @@ export const beequipOptions =[
         "name": "Single Mitten",
         "image": "Single_Mitten",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {"+Convert Amount":"",
+            "%Bomb Pollen":""
+        },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {"+Capacity":""}
     },
     {
         "name": "Smiley Sticker",
@@ -320,9 +322,9 @@ export const beequipOptions =[
         "name": "Warm Scarf",
         "image": "Warm_Scarf",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {"%Convert Amount":"", "%Energy":""},
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {"%Red Field Capacity":"", "%White Field Capacity":"", "%Capacity":""}
     },
     {
         "name": "Whistle",

@@ -24,11 +24,19 @@ function ItemDialog({ beequip, open, setOpen, handleAddItem, inventory, setInven
   //Handles when we edit stat values
   function handleStatChange(event, setStats, stats) {
     const { name, value } = event.target;
+  
+    // Allow digits and at most one decimal point
+    const newValue = value.replace(/[^0-9.]/g, '');
+  
+    // Ensure only one decimal point is allowed
+    const validValue = newValue.split('.').length > 2 ? newValue.slice(0, -1) : newValue;
+  
     setStats({
       ...stats,
-      [name]: value.replace(/\D/g, ''),
+      [name]: validValue,
     });
   }
+  
 
   function handleClick() {
     const updatedBeequip = {
@@ -94,7 +102,7 @@ function ItemDialog({ beequip, open, setOpen, handleAddItem, inventory, setInven
                       <div key={stat} className="flex items-center justify-between mb-2">
                         <label className="text-[#c5ffca] ">{stat}:</label>
                         <input
-                        maxLength={2}
+                        maxLength={3}
                           name={stat}
                           value={mainStats[stat]}
                           onChange={(e) =>
@@ -111,7 +119,7 @@ function ItemDialog({ beequip, open, setOpen, handleAddItem, inventory, setInven
                       <div key={stat} className="flex items-center justify-between mb-2">
                         <label className="text-white ">{stat}:</label>
                         <input
-                        maxLength={2}
+                        maxLength={3}
                           name={stat}
                           value={negativeStats[stat]}
                           onChange={(e) =>
@@ -128,7 +136,7 @@ function ItemDialog({ beequip, open, setOpen, handleAddItem, inventory, setInven
                       <div key={stat} className="flex items-center justify-between mb-2">
                         <label className="text-[#ffec89]">{stat}:</label>
                         <input
-                       maxLength={2}
+                       maxLength={3}
                           name={stat}
                           
                           value={hiveBonus[stat]}

@@ -5,14 +5,18 @@ import { hiveOptions } from "../options/hiveOptions";
 import { stickerOptions } from "../options/stickerOptions";
 import { voucherOptions } from "../options/voucherOptions";
 import { beequipOptions } from "../options/beequipOptions";
+import { otherOptions } from "../options/otherOptions";
 import DisplayCard from "../components/DisplayCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import DescriptionDialog from "../components/DescriptionDialog";
 import BeequipDisplayCard from "../components/BeequipDisplayCard";
 import ItemDialog from "../components/ItemDialog";
 function Home() {
   const [ourQuery, setOurQuery] = useState("");
   const [theirQuery, setTheirQuery] = useState("");
+
+  
+
 
   const search = (item, query) => {
     return query.toLowerCase() === ""
@@ -30,31 +34,36 @@ function Home() {
     team == "ours" ? setIsOpenOurs(true) : setIsOpenTheirs(true);
   };
 
-  const [OurInventory, setOurItemQuantities] = useState({
+  const defaultInventory = {
     cub: {},
-
     hive: {},
     sticker: {},
     beequip: [],
     voucher: {},
-  });
-  const [TheirInventory, setTheirItemQuantities] = useState({
-    cub: {},
+    other: {}
+  }
 
-    hive: {},
-    sticker: {},
-    beequip: [],
-    voucher: {},
+  const [OurInventory, setOurItemQuantities] = useState(() => {
+    // getting stored value
+    const saved = localStorage.getItem("OurInventory");
+    const initialValue = JSON.parse(saved);
+    return initialValue || defaultInventory;
   });
+  const [TheirInventory, setTheirItemQuantities] = useState(() => {
+    // getting stored value
+    const saved = localStorage.getItem("TheirInventory");
+    const initialValue = JSON.parse(saved);
+    return initialValue || defaultInventory;
+  });
+
+  useEffect(() => {
+    // storing input name
+    localStorage.setItem("OurInventory", JSON.stringify(OurInventory));
+    localStorage.setItem("TheirInventory", JSON.stringify(TheirInventory));
+  }, [OurInventory, TheirInventory]);
 
   const resetInventory = (setInventory) => {
-    setInventory({
-      cub: {},
-      voucher: {},
-      hive: {},
-      sticker: {},
-      beequip: [],
-    });
+    setInventory(defaultInventory);
   };
 
   const handleAddItem = (item, inventory, setInventory) => {
@@ -122,7 +131,20 @@ function Home() {
         ...inventory,
         [type]: updatedBeequips,
       });
-    } else {
+    } else if (type === "other"){
+    // Remove all quantities of the item
+    const updatedInventory = {
+      ...inventory,
+      [type]: {
+        ...inventory[type],
+      },
+    };
+    delete updatedInventory[type][name];
+    setInventory(updatedInventory);
+
+    }
+    
+    else {
       //Otherwise update other items
       const currentQuantity = inventory[type]?.[name]?.quantity || 0;
       if (currentQuantity > 0) {
@@ -363,6 +385,22 @@ function Home() {
                 />
               ))}
           </div>
+
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl pt-9">
+            Other
+          </h2>
+          <div className="flex flex-wrap gap-4 mt-4">
+            {otherOptions
+              .filter((item) => search(item, ourQuery))
+              .map((item) => (
+                <ItemCard
+                  item={item}
+                  onClick={() =>
+                    handleAddItem(item, OurInventory, setOurItemQuantities)
+                  }
+                />
+              ))}
+          </div>
           {/* Display Beequips */}
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl pt-9">
             Beequips
@@ -432,8 +470,9 @@ function Home() {
           />
         </svg>
               
-        <p className="text-lg font-semibold mt-2">TRADE</p>
-        <p className="text-sm ">beesfortrade. vercel.app </p>
+        <p className="text-3xl  font-semibold mt-2">TRADE</p>
+        <br></br>
+        <p className="text-sm ">beesfortrade.vercel.app </p>
         <p className="text-sm mt-1">made by euwunha</p>
       </div>
 
@@ -552,6 +591,23 @@ function Home() {
           </h2>
           <div className="flex flex-wrap gap-4 mt-4">
             {voucherOptions
+              .filter((item) => search(item, theirQuery))
+              .map((item) => (
+                <ItemCard
+                  item={item}
+                  onClick={() =>
+                    handleAddItem(item, TheirInventory, setTheirItemQuantities)
+                  }
+                />
+              ))}
+          </div>
+
+
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl pt-9">
+            Other
+          </h2>
+          <div className="flex flex-wrap gap-4 mt-4">
+            {otherOptions
               .filter((item) => search(item, theirQuery))
               .map((item) => (
                 <ItemCard

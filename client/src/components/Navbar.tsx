@@ -3,7 +3,7 @@ function Navbar() {
     <nav>
       <div className="grid grid-cols-5 p-5 bg-[#282828] shadow-2xl justify-center">
         <img src="./bannerbss.png" className="w-auto ml-28" alt="Banner" />
-        <div className="flex col-span-3 flex-col justify-center items-center">
+        <div className="flex col-span-3 flex-col  items-center">
           <a href="/" className="text-6xl font-bold cursor-pointer ">
             Bees For Trade (beta)
           </a>
@@ -30,9 +30,14 @@ function Navbar() {
           </div>
         </div>
         <div>
-          <p className="pt-32">
-            Image credits go to Bee Swarm Simulator<br></br> More features to come - euwunha
-          </p>
+          <div className = "flex justify-center pt-6 ">
+          <a
+                  href="/about"
+                  className="bg-indigo-600 px-4 py-2 rounded text-white hover:bg-indigo-500 text-xl "
+                >
+                  About the site
+                </a>
+                </div>
         </div>
       </div>
     </nav>

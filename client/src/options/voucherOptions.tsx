@@ -1,14 +1,14 @@
 export const voucherOptions=[
     {
 
-        "name": "Cub Buddy ",
+        "name": "Cub Buddy",
         "image":"Cub_Buddy_Voucher",
         "type": "voucher",
         "value": 0
     },
     {
 
-        "name": "Bear Bee ",
+        "name": "Bear Bee",
         "image":"Bear_Bee_Voucher",
         "type": "voucher",
         "value": 0
