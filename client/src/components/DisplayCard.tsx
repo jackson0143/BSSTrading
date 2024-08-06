@@ -41,7 +41,7 @@ const DisplayCard = ({ item, onClick }) => {
         />
         <div className="flex items-center justify-between w-full">
           <div className="text-white text-sm font-semibold">{name}</div>
-          <div className="text-green-400 text-sm font-bold pl-2">
+          <div className="text-green-400 text-2xl font-black pr-1">
             {quantity}
           </div>
         </div>

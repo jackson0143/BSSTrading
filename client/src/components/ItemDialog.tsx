@@ -117,7 +117,7 @@ function ItemDialog({ beequip, open, setOpen, handleAddItem, inventory, setInven
                     <h4 className="text-white text-2xl underline font-bold mb-4">Negative Stats</h4>
                     {Object.keys(negativeStats).map((stat) => (
                       <div key={stat} className="flex items-center justify-between mb-2">
-                        <label className="text-white ">{stat}:</label>
+                        <label className="text-[#ffd3d3] ">{stat}:</label>
                         <input
                         maxLength={3}
                           name={stat}

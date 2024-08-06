@@ -73,15 +73,15 @@ const BeequipDisplayCard = ({ item, onClick }) => {
           (stat) =>
             main_stat_negative[stat] !== "" && (
               <div className="">
-                <label className="text-[#c5ffca] text-xl font-extrabold font-outline-">
-                  {stat[0] === "+" ? (
+                <label className="text-[#ffd3d3] text-xl font-extrabold font-outline-main-stat-negative">
+                  {stat[0] === "-" ? (
                     <>
                       {stat[0]}
                       {main_stat_negative[stat]} {stat.slice(1)}
                     </>
                   ) : (
                     <>
-                      {"+"}
+                    
                       {main_stat_negative[stat]}
                       {stat[0]} {stat.slice(1)}
                     </>
@@ -91,28 +91,35 @@ const BeequipDisplayCard = ({ item, onClick }) => {
             )
         )}
 
-        {Object.keys(hive_bonus).map(
-          (stat) =>
-            hive_bonus[stat] !== "" && (
-              <div className="">
-                <label className="text-[#ffec89] text-lg font-extrabold font-outline-hive-bonus  ">
-                  {stat[0] === "+" ? (
-                    <>[Hive bonus]
-                      {stat[0]}
-                      {hive_bonus[stat]} {stat.slice(1)}
-                    </>
-                  ) : (
-                    <>
-                    [Hive bonus]
-                      {"+"}
-                      {hive_bonus[stat]}
-                      {stat[0]} {stat.slice(1)}
-                    </>
-                  )}
-                </label>
-              </div>
-            )
+{Object.keys(hive_bonus).map((stat) =>
+  hive_bonus[stat] !== "" && (
+    <div className="">
+      <label className="text-[#ffec89] text-lg font-extrabold font-outline-hive-bonus">
+        {stat[0] === "+" ? (
+          <>
+            [Hive bonus]
+            {stat[0]}
+            {hive_bonus[stat]} {stat.slice(1)}
+          </>
+        ) : stat[0] === "-" ? (
+          <>
+            [Hive bonus]
+            {stat[0]}
+            {hive_bonus[stat]} {stat.slice(1)}
+          </>
+        ) : (
+          <>
+            [Hive bonus]
+            {"+"}
+            {hive_bonus[stat]}
+            {stat[0]} {stat.slice(1)}
+          </>
         )}
+      </label>
+    </div>
+  )
+)}
+
       </div>
     </div>
   );

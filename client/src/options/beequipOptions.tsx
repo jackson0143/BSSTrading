@@ -3,15 +3,27 @@ export const beequipOptions =[
         "name": "Autumn Sunhat",
         "image": "Autumn_Sunhat",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {"+Convert Amount":"", 
+            "%Convert Amount":"", 
+            "%White gather Amount":"", 
+            "%Ability rate":"", 
+        },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {"+Capacity":"", 
+            "%Sunflower Field Pollen":"",
+            "%Pumpkin Patch Pollen":"",
+            "%White Field Capacity":"",
+            "%White Pollen":""
+        }
     },
     {
         "name": "Bandage",
         "image": "Bandage",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {"+Gather Amount":"", 
+            "%Energy":"",
+            "%Attack":""
+        },
         "main_stat_negative": {},
         "hive_bonus": {}
     },
@@ -19,105 +31,168 @@ export const beequipOptions =[
         "name": "Bang Snap",
         "image": "Bang_Snap",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": { "%Bomb Pollen": "", 
+            "%Critical Chance": "", 
+            "+Ability: Buzz Bomb(+)": "", 
+            "+Ability: Red Bomb(+)": "", 
+            "+Ability: Blue Bomb(+)": ""},
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {"%Instant Bomb Conversion": "", 
+    "%Instant Buzz Bomb Conversion": "", 
+    "%Instant Red Bomb Conversion": "", 
+    "%Instant Blue Bomb Conversion": ""}
     },
     {
         "name": "Bead Lizard",
         "image": "Bead_Lizard",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {    "%Convert Amount": "", 
+            "%Gathering Flames Chance": "", 
+            "%Gathering Bubbles Chance": "", 
+           },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": { "%Bubble Pollen": ""}
     },
     {
         "name": "Beesmas Top",
         "image": "Beesmas_Top",
         "type": "beequip",
-        "main_stat": {},
-        "main_stat_negative": {},
-        "hive_bonus": {}
+        "main_stat": {    "%Critical Chance": "", 
+            "%Ability Rate": "", 
+            "+Attack": "", },
+        "main_stat_negative": {    "%Energy": "", },
+        "hive_bonus": {    "%Critical Power": ""}
     },
     {
         "name": "Beesmas Tree Hat",
         "image": "Beesmas_Tree_Hat",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {    "%Convert Amount": "", 
+            "%Critical Chance": "", 
+            "%Ability Pollen": "", 
+            "%Ability Rate": "", },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {    "+Capacity": "", 
+            "%Convert Rate At Hive": ""}
     },
     {
         "name": "Beret",
         "image": "Beret",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {    "+Convert Amount": "", 
+            "%Convert Amount": "", 
+            "%Ability Pollen": "", },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {    "+Capacity": "", 
+            "%Blue Field Capacity": "", 
+            "%Capacity": ""}
     },
     {
         "name": "Bottle Cap",
         "image": "Bottle_Cap",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {    "+Convert Amount": "", 
+            "%Critical Chance": "", 
+            "%Critical Power": "",
+        "+Ability: Buzz Bomb": "",  },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {   "%Critical Power": ""}
     },
     {
         "name": "Bubble Light",
         "image": "Bubble_Light",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {   "+Convert Amount": "", 
+            "+Movespeed": "", 
+            "%Bubble Pollen": "", 
+            "%Mark Duration": "", },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {   "%Bubble Pollen": "", 
+            "%Bee Movespeed": ""}
     },
     {
         "name": "Camo Bandana",
         "image": "Camo_Bandana",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {  "%Gather Amount": "", 
+            "%Buzz Bomb Pollen": "", 
+            "+Attack": "", 
+            "%Critical Power": "", 
+            "%Super Crit Power": "", },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {    "%Buzz Bomb Pollen": "", 
+            "%Pumpkin Patch Capacity": "", 
+            "%Coconut Field Capacity": ""}
     },
     {
         "name": "Camphor Lip Balm",
         "image": "Camphor_Lip_Balm",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {    "+Gather Amount": "", 
+            "%Critical Power": "", },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": { "xPepper Patch Pollen": "", 
+            "%Bubble Pollen": ""}
     },
     {
         "name": "Candy Ring",
         "image": "Candy_Ring",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {  "+Energy": "", 
+            "%Convert Amount": "", 
+            "%Ability Rate": "", },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {    "%Honey At Hive": "", 
+            "%Honey Per Goo": "", 
+            "xHoney From Tokens": ""}
     },
     {
         "name": "Charm Bracelet",
         "image": "Charm_Bracelet",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {    "+Convert Amount%": "", 
+            "+Critical Chance%": "", 
+            "+Mark Duration%": "", 
+            "+Ability Rate%": "", },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {    "+Loot Luck%": "", 
+            "+Honey At Hive%": "", 
+            "+Convert Rate At Hive%": "", 
+            "+Honey From Tokens%": "", 
+            "+Blue Flower Field Pollen%": "", 
+            "+Dandelion Field Pollen%": "", 
+            "+Mushroom Field Pollen%": "", 
+            "+Sunflower Field Pollen%": ""}
     },
     {
         "name": "Demon Talisman",
         "image": "Demon_Talisman",
         "type": "beequip",
-        "main_stat": {},
-        "main_stat_negative": {},
-        "hive_bonus": {}
+        "main_stat": {   "%Attack": "", 
+            "%Gather Amount": "", 
+            "%Ability Pollen": "", 
+            "%Gathering Flames Chance": "", },
+        "main_stat_negative": {    "%Movespeed": "", 
+            "%Energy": "", },
+        "hive_bonus": {   "%Red Bomb Pollen": "", 
+            "%Flame Pollen": "", 
+            "%Instant Red Bomb Conversion": "", 
+            "%Instant Flame Conversion": "", 
+            "%Instant Demon Bee Conversion": "", 
+            "%Max Bee Energy": "", 
+            "-Player Movespeed": "", 
+            "-xBlue Pollen": ""}
     },
     {
         "name": "Electric Candle",
         "image": "Electric_Candle",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {    "%Red Gather Amount": "", 
+            "%Flames Pollen": "", 
+            "%Gathering Flames Chance": "", 
+            "%Energy": "", },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {  "%Flames Pollen": ""}
     },
     {
         "name": "Elf Cap",
@@ -135,56 +210,89 @@ export const beequipOptions =[
         "name": "Festive Wreath",
         "image": "Festive_Wreath",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {    "+Gather Amount": "", 
+            "+Convert Amount": "", 
+            "%Red Bomb Pollen": "", 
+            "%Mark Duration": "", 
+            "%Ability Rate": "", 
+            "+Ability: Festive Mark": "", },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {   "+Capacity": "", 
+            "%Ticket Chance": "", 
+            "%Red Bee Convert Rate": "", 
+            "%Honey At Hive": ""}
     },
     {
         "name": "Icicles",
         "image": "Icicles",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {    "%Attack": "", 
+            "%Blue Bomb Pollen": "", 
+            "%Cactus Field Pollen": "", },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {   "%Blue Bomb Pollen": "", 
+            "%Monster Respawn Time": ""}
     },
     {
         "name": "Kazoo",
         "image": "Kazoo",
         "type": "beequip",
-        "main_stat": {},
-        "main_stat_negative": {},
-        "hive_bonus": {}
+        "main_stat": {   "%Convert Amount": "", 
+            "%Critical Power": "",
+        "+Ability: Melody":"" },
+        "main_stat_negative": {    "%Energy": "", },
+        "hive_bonus": {    "%Critical Power": "", 
+            "%Super-Crit Power": ""}
     },
     {
         "name": "Lei",
         "image": "Lei",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {    "+Gather Amount": "", 
+            "%Gather Amount": "", 
+            "%Gather Pollination Chance": "", 
+            "%Ability Rate": "", },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {    "%Sunflower Field Pollen": "", 
+            "%Blue Flower Field Pollen": "", 
+            "%Rose Field Pollen": "", 
+            "%Coconut Field Pollen": ""}
     },
     {
         "name": "Lump Of Coal",
         "image": "Lump_Of_Coal",
         "type": "beequip",
-        "main_stat": {},
-        "main_stat_negative": {},
-        "hive_bonus": {}
+        "main_stat": {    "%Bomb Pollen": "", },
+        "main_stat_negative": {    "%Energy": "", 
+            "%Movespeed": "", },
+        "hive_bonus": {    "%Bomb Pollen": "", 
+            "%Buzz Bomb Pollen": "", 
+            "%Blue Bomb Pollen": "", 
+            "%Red Bomb Pollen": "", 
+            "%Pollen": "", 
+            "%White Pollen": "", 
+            "%Red Pollen": ""}
     },
    
     {
         "name": "Paperclip",
         "image": "Paperclip",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {  "+Ability Rate%": "", 
+            "+Ability Pollen%": "", 
+            "+Convert Rate At Hive%": "", 
+            "+Ability: Token Link": "", },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {    "+Ability Token Lifespan%": "", 
+            "+Bee Ability Pollen%": ""}
     },
     {
         "name": "Paper Angel",
         "image": "Paper_Angel",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {   "%White Gather": "", 
+            "%Ability Pollen": "", 
+            "+Ability: Token Link": ""},
         "main_stat_negative": {},
         "hive_bonus": {}
     },
@@ -192,15 +300,19 @@ export const beequipOptions =[
         "name": "Peppermint Antennas",
         "image": "Peppermint_Antennas",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {    "%Convert Amount": "", 
+            "%Gather Amount": "", 
+            "%Movespeed": "", 
+            "%Ability Pollen": "", 
+            "%Ability Rate": "", },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {    "%Bee Ability Rate": ""}
     },
     {
         "name": "Pinecone",
         "image": "Pinecone",
         "type": "beequip",
-        "main_stat": {"%Convert Amount":""},
+        "main_stat": {"%Convert Amount":"", "%Ability Rate":""},
         "main_stat_negative": {},
         "hive_bonus": {"%Pine Tree Forest Capacity":"", "%Pine Tree Forest Pollen":""}
     },
@@ -208,41 +320,63 @@ export const beequipOptions =[
         "name": "Pink Eraser",
         "image": "Pink_Eraser",
         "type": "beequip",
-        "main_stat": {},
-        "main_stat_negative": {},
-        "hive_bonus": {}
+        "main_stat": {    "+Convert Amount": "", 
+            "%Instant Conversion": "", },
+        "main_stat_negative": {    "%Mark Duration": "", },
+        "hive_bonus": {    "%Instant Red Bomb Conversion": "", 
+            "%Instant Bee Gather Conversion": "", 
+            "%Honey From Instant Conversion": ""}
     },
     {
         "name": "Pink Shades",
         "image": "Pink_Shades",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {    "%Ability Pollen": "", 
+            "%Critical Power": "", 
+            "%Critical Chance": "", 
+            "%Super-Crit Chance": "", 
+            "Ability: Focus": "", },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {    "%Super-Crit Chance": "", 
+            "%Super-Crit Power": ""}
     },
     {
         "name": "Poinsettia",
         "image": "Poinsettia",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {  "%Red Gather Amount": "", 
+            "%Gather Pollination Chance": "", },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {   "%Bee Gather Pollen": "", 
+            "%Red Pollen": ""}
     },
     {
         "name": "Reindeer Antlers",
         "image": "Reindeer_Antlers",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {    "%Convert Amount": "", 
+            "%Ability Pollen": "", 
+            "+Ability: Focus": "", 
+            "+Ability: Reindeer Fetch": "", },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {    "%Capacity": "", 
+            "%Bond From Treats": ""}
     },
     {
         "name": "Rose Headband",
         "image": "Rose_Headband",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {    "+Attack": "", 
+            "%Convert Amount": "", 
+            "%Gather Pollination Chance": "", 
+            "%Ability Rate": "", 
+            "%Critical Chance": "", },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {    "+Capacity": "", 
+            "%Rose Field Pollen": "", 
+            "%Red Field Capacity": "", 
+            "%Instant Rose Field Conversion": "", 
+            "%Bee Attack": ""}
     },
     {
         "name": "Single Mitten",
@@ -258,65 +392,99 @@ export const beequipOptions =[
         "name": "Smiley Sticker",
         "image": "Smiley_Sticker",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {    "%Energy": "", 
+            "%Bomb Pollen": "", 
+            "%Critical Power": "", 
+            "%Mark Duration": "", 
+            "+Ability: Honey Mark": "", 
+            "+Ability: Blue Bomb": "", },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {    "%Mark Duration": "", 
+            "%Max Bee Energy": ""}
     },
     {
         "name": "Snowglobe",
         "image": "Snowglobe",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {    "%Bomb Pollen": "", 
+            "+Ability: Snowglobe Shake": "", 
+            "%Ability Rate": "", },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {    "%Bomb Pollen": ""}
     },
     {
         "name": "Snow Tiara",
         "image": "Snow_Tiara",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {   "%Convert Amount": "", 
+            "%Convert At Hive": "", 
+            "%Blue Gather Amount": "", 
+            "%White Gather Amount": "", 
+            "%Critical Chance": "", },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {  "%Blue Field Capacity": "", 
+            "%White Field Capacity": "", 
+            "%Honey From Tokens": ""}
     },
     {
         "name": "Sweatband",
         "image": "Sweatband",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {    "%Energy": "", 
+            "%White Gather Amount": "", 
+            "%Red Gather Amount": "", 
+            "%Blue Gather Amount": "", },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": { "%White Pollen": "", 
+            "%Red Pollen": "", 
+            "%Blue Pollen": "", 
+            "%Max Bee Energy": "", 
+            "%Pollen": ""}
     },
     {
         "name": "Thimble",
         "image": "Thimble",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {    "+Convert Amount": "", 
+            "%Convert Amount": "", },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {    "%Convert Rate": "", 
+            "xConvert Rate": ""}
     },
     {
         "name": "Thumbtack",
         "image": "Thumbtack",
         "type": "beequip",
-        "main_stat": {},
+        "main_stat": {  "+Gather Amount": "", 
+            "+Critical Power%": "", 
+            "+Attack%": "", 
+            "+Attack": "", },
         "main_stat_negative": {},
-        "hive_bonus": {}
+        "hive_bonus": {  "+Red Bee Attack%": "", 
+            "+Bee Attack%": ""}
     },
     {
         "name": "Toy Drum",
         "image": "Toy_Drum",
         "type": "beequip",
-        "main_stat": {},
-        "main_stat_negative": {},
-        "hive_bonus": {}
+        "main_stat": {   "+Gather Amount": "", 
+            "%Attack": "", 
+            "+Ability: Haste": "", 
+            "%Critical Chance": "", },
+        "main_stat_negative": {"%Energy": "", },
+        "hive_bonus": { "%Bee Ability Pollen": ""}
     },
     {
         "name": "Toy Horn",
         "image": "Toy_Horn",
         "type": "beequip",
-        "main_stat": {},
-        "main_stat_negative": {},
-        "hive_bonus": {}
+        "main_stat": {    "+Convert Amount": "", 
+            "%Ability Pollen": "", 
+            "+Ability: Melody": "", 
+            "%Ability Rate": "", },
+        "main_stat_negative": {  "%Energy": "", },
+        "hive_bonus": {    "%Bee Ability Pollen": "", 
+            "%Convert Rate": ""}
     },
     {
         "name": "Warm Scarf",
@@ -330,8 +498,13 @@ export const beequipOptions =[
         "name": "Whistle",
         "image": "Whistle",
         "type": "beequip",
-        "main_stat": {},
-        "main_stat_negative": {},
-        "hive_bonus": {}
+        "main_stat": {    "%Movespeed": "", 
+            "%Critical Power": "", 
+            "+Ability: Haste": "", 
+            "+Ability: Melody": "",},
+        "main_stat_negative": {    "%Energy": "", },
+        "hive_bonus": {    "%Bee Movespeed": "", 
+            "%Super-Crit Power": "", 
+            "xPlayer Movespeed": ""}
     }
 ]

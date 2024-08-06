@@ -277,8 +277,8 @@ function Home() {
           </div>
 
           {dataFromDialog != null ? (
-            <div className=" ml-1 rounded-md pl-4 py-2 mt-4 bg-[#565656] w-3/4">
-              NOTE: {dataFromDialog}
+            <div className=" ml-1 rounded-md pl-4 py-2 mt-4 text-lg font-semibold bg-[#565656] w-3/4">
+              {dataFromDialog}
             </div>
           ) : null}
           <DescriptionDialog
