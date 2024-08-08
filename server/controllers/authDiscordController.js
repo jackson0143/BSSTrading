@@ -162,7 +162,7 @@ const DiscordAuth = async (req, res) => {
         httpOnly: true,
       });
 
-      res.redirect("http://localhost:5173/");
+      res.redirect(process.env.CLIENT_URL);
     } catch (error) {
       console.error(error);
     }
