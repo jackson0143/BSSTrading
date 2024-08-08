@@ -15,11 +15,14 @@ router.get('/logout', Logout)
 router.post('/signup',Register)
 router.post('/login', Login)
 */
+/*
 router.get('/url', (_, res) => {
     res.json({
       url: `${config.authUrl}?${authParams}`,
     })
   })
+
+  */
 
 
 module.exports = router

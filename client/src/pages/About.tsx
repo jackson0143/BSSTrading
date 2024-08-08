@@ -21,7 +21,7 @@ function About() {
           </p>
           <a
             href="/"
-            className="px-8 py-4 text-xl font-semibold rounded flex bg-purple-600 w-1/2 justify-center text-gray-50 hover:text-gray-200"
+            className="px-8 py-4 text-xl font-semibold rounded flex bg-[#6A6A6A] w-1/2 justify-center text-gray-50 hover:text-gray-200"
           >
             Back to home
           </a>

@@ -3,7 +3,7 @@ import { useState } from "react";
 const BeequipDisplayCard = ({ item, onClick }) => {
   const [style, setStyle] = useState({ display: "none" });
   const { name, type, image, main_stat, main_stat_negative, hive_bonus } = item;
-  console.log(hive_bonus);
+
   return (
     <div
       className="bg-[#2b2b2b] z-0 rounded-lg p-2 w-[333px]  h-auto relative"
