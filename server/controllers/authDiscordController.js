@@ -21,9 +21,20 @@ getRefreshTokenParams = (token) => {
   });
 };
 
+const getCookieOptions = () => {
+  const isProduction = process.env.NODE_ENV === 'production';
+  return {
+    httpOnly: true,
+    secure: isProduction, // Use secure cookies in production (requires HTTPS)
+    sameSite: isProduction ? 'None' : 'Lax', // 'None' for production, 'Lax' for development
+
+  };
+};
+
 const LoggedIn = async (req, res) => {
   try {
     // Log request cookies
+
 
     const JWTCookieToken = req.cookies.token;
 
@@ -59,11 +70,7 @@ const LoggedIn = async (req, res) => {
     */
 
     const newToken = jwt.sign(access_token, process.env.TOKEN_SECRET, {});
-    res.cookie("token", newToken, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV == 'production', // Use secure cookies in production
-      sameSite: "None", // Required for cross-origin requests
-    });
+    res.cookie("token", newToken,  getCookieOptions());
 
     //After we sign the new JWT token, use the token we just extracted to get the info for the user
     const userResult = await axios.get("https://discord.com/api/users/@me", {
@@ -103,7 +110,7 @@ const Logout = async (req, res) => {
       }
     );
 
-    console.log("Logged out");
+
 
     // Clear cookies and respond
     res.clearCookie("token");
@@ -133,7 +140,7 @@ const DiscordAuth = async (req, res) => {
         }
       );
       const oauthData = output.data;
-      console.log(oauthData);
+      
 
       //Then using the access token, we can just get the user's data
       const userResult = await axios.get("https://discord.com/api/users/@me", {
@@ -158,16 +165,12 @@ const DiscordAuth = async (req, res) => {
         {}
       );
 
-      res.cookie("token", token, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === "production", // Use secure cookies in production
-        sameSite: "None", // Required for cross-origin requests
-      });
+      res.cookie("token", token, getCookieOptions());
 
       res.redirect(process.env.CLIENT_URL);
     } catch (error) {
       console.error(error);
-      console.log(error);
+      
       res.status(500).json({ message: "Failed to login" });
     }
   }

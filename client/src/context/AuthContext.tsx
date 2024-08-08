@@ -10,17 +10,17 @@ export const AuthContextProvider = ({ children }) => {
   const checkLoginState = useCallback(async () => {
     try {
       const response = await axios.get(server_url + '/loggedin', { withCredentials: true });
-      console.log('Server response:', response);
+
       const { loggedIn, user } = response.data;
   
       setLoggedIn(loggedIn);
-      console.log('LoggedIn state set to:', loggedIn);
+
       if (user) {
         setUser(user);
-        console.log('User state set to:', user);
+
       }
     } catch (err) {
-      console.error('Error in checkLoginState:', err);
+      console.error( err);
     }
   }, []);
   
