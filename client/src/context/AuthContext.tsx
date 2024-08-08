@@ -12,9 +12,9 @@ export const AuthContextProvider = ({ children }) => {
       try {
         
         const response = await axios.get(server_url+'/loggedin', { withCredentials: true });
-
+        console.log(response)
         const { loggedIn, user} = response.data;
-        console.log("YES")
+
         setLoggedIn(loggedIn);
         //console.log(loggedIn)
         user && setUser(user)
