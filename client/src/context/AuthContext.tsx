@@ -7,28 +7,28 @@ export const AuthContextProvider = ({ children }) => {
   const [loggedIn, setLoggedIn] = useState(null)
   const [user, setUser] = useState(null)
   
-    const checkLoginState = useCallback(async () => {
-
-      try {
-        
-        const response = await axios.get(server_url+'/loggedin', { withCredentials: true });
-        console.log(response)
-        const { loggedIn, user} = response.data;
-
-        setLoggedIn(loggedIn);
-        //console.log(loggedIn)
-        user && setUser(user)
- 
-      } catch (err) {
-        console.error(err);
+  const checkLoginState = useCallback(async () => {
+    try {
+      const response = await axios.get(server_url + '/loggedin', { withCredentials: true });
+      console.log('Server response:', response);
+      const { loggedIn, user } = response.data;
+  
+      setLoggedIn(loggedIn);
+      console.log('LoggedIn state set to:', loggedIn);
+      if (user) {
+        setUser(user);
+        console.log('User state set to:', user);
       }
-    }, []);
+    } catch (err) {
+      console.error('Error in checkLoginState:', err);
+    }
+  }, []);
   
     useEffect(() => {
      
       checkLoginState();
       
-    }, [loggedIn, checkLoginState]);
+    }, [checkLoginState]);
     
   
     return (
