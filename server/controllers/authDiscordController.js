@@ -23,10 +23,12 @@ getRefreshTokenParams = (token) => {
 
 const LoggedIn = async (req, res) => {
   try {
-    // Get the JWT token first
-   
-    const JWTCookieToken = req.cookies.token;
-    
+   // Log request cookies
+  console.log('Request Cookies:', req.cookies);
+
+  // Check if cookie is being sent correctly
+  const JWTCookieToken = req.cookies.token;
+console.log('JWTCookieToken:', JWTCookieToken);
     if (!JWTCookieToken) {
       return res.json({ loggedIn: false, message: req.cookies.token});
     }
@@ -61,6 +63,8 @@ const LoggedIn = async (req, res) => {
     const newToken = jwt.sign(access_token, process.env.TOKEN_SECRET, {});
     res.cookie("token", newToken, {
       httpOnly: true,
+      sameSite: 'None'
+
     });
 
     //After we sign the new JWT token, use the token we just extracted to get the info for the user
@@ -161,6 +165,7 @@ const DiscordAuth = async (req, res) => {
 
       res.cookie("token", token, {
         httpOnly: true,
+        sameSite: 'None'
       });
 
       res.redirect(process.env.CLIENT_URL);
