@@ -23,14 +23,12 @@ getRefreshTokenParams = (token) => {
 
 const LoggedIn = async (req, res) => {
   try {
-   // Log request cookies
-  console.log('Request Cookies:', req.cookies);
+    // Log request cookies
 
-  // Check if cookie is being sent correctly
-  const JWTCookieToken = req.cookies.token;
-console.log('JWTCookieToken:', JWTCookieToken);
+    const JWTCookieToken = req.cookies.token;
+
     if (!JWTCookieToken) {
-      return res.json({ loggedIn: false, message: req.cookies.token});
+      return res.json({ loggedIn: false, message: req.cookies.token });
     }
 
     //verify and retrieve refresh token
@@ -63,8 +61,8 @@ console.log('JWTCookieToken:', JWTCookieToken);
     const newToken = jwt.sign(access_token, process.env.TOKEN_SECRET, {});
     res.cookie("token", newToken, {
       httpOnly: true,
-      sameSite: 'None'
-
+      secure: process.env.NODE_ENV == 'production', // Use secure cookies in production
+      sameSite: "None", // Required for cross-origin requests
     });
 
     //After we sign the new JWT token, use the token we just extracted to get the info for the user
@@ -77,7 +75,6 @@ console.log('JWTCookieToken:', JWTCookieToken);
     const user = { id, username, avatar };
     //console.log(user)
     res.json({ loggedIn: true, user });
-
   } catch (err) {
     //console.error(err);
     res.json({ loggedIn: false });
@@ -86,8 +83,6 @@ console.log('JWTCookieToken:', JWTCookieToken);
 
 const Logout = async (req, res) => {
   try {
-    console.log(req.cookies.token)
-    // Look at the cookie and grab the current token
     const token = jwt.verify(req.cookies.token, process.env.TOKEN_SECRET);
 
     // Prepare the request data
@@ -165,13 +160,14 @@ const DiscordAuth = async (req, res) => {
 
       res.cookie("token", token, {
         httpOnly: true,
-        sameSite: 'None'
+        secure: process.env.NODE_ENV === "production", // Use secure cookies in production
+        sameSite: "None", // Required for cross-origin requests
       });
 
       res.redirect(process.env.CLIENT_URL);
     } catch (error) {
       console.error(error);
-      console.log(error)
+      console.log(error);
       res.status(500).json({ message: "Failed to login" });
     }
   }
