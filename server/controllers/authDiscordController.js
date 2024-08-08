@@ -24,10 +24,11 @@ getRefreshTokenParams = (token) => {
 const LoggedIn = async (req, res) => {
   try {
     // Get the JWT token first
+   
     const JWTCookieToken = req.cookies.token;
-    console.log(JWTCookieToken)
+    
     if (!JWTCookieToken) {
-      return res.json({ loggedIn: false, message: "JWT must be provided" });
+      return res.json({ loggedIn: false, message: req.cookies.token});
     }
 
     //verify and retrieve refresh token
@@ -70,7 +71,7 @@ const LoggedIn = async (req, res) => {
     });
     const { id, username, avatar } = userResult.data;
     const user = { id, username, avatar };
-    console.log(user)
+    //console.log(user)
     res.json({ loggedIn: true, user });
 
   } catch (err) {
