@@ -25,7 +25,7 @@ const LoggedIn = async (req, res) => {
   try {
     // Get the JWT token first
     const JWTCookieToken = req.cookies.token;
-
+    console.log(JWTCookieToken)
     if (!JWTCookieToken) {
       return res.json({ loggedIn: false, message: "JWT must be provided" });
     }
@@ -70,7 +70,7 @@ const LoggedIn = async (req, res) => {
     });
     const { id, username, avatar } = userResult.data;
     const user = { id, username, avatar };
-
+    console.log(user)
     res.json({ loggedIn: true, user });
 
   } catch (err) {
