@@ -115,7 +115,7 @@ const Logout = async (req, res) => {
   }
 };
 
-//After clicking on the oAuth link, redirects to our desired url /discord/redirect with the fragment
+//After clicking on the oAuth link, redirects to our desired url /discord/ with the fragment
 const DiscordAuth = async (req, res) => {
   const { code } = req.query;
 
@@ -165,6 +165,8 @@ const DiscordAuth = async (req, res) => {
       res.redirect(process.env.CLIENT_URL);
     } catch (error) {
       console.error(error);
+      console.log(error)
+      res.status(500).json({ message: "Failed to login" });
     }
   }
 };
