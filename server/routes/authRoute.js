@@ -4,7 +4,7 @@ const router = express.Router()
 const {Login, Register} = require('../controllers/authController')
 const {DiscordAuth, LoggedIn, Logout} = require('../controllers/authDiscordController')
 //login route
-router.get('/discord/redirect', DiscordAuth)
+router.get('/discord', DiscordAuth)
 
 router.get('/loggedin',LoggedIn )
 
