@@ -2,6 +2,8 @@ import { createContext } from "react"
 import { useState, useCallback, useEffect } from "react"
 import axios from 'axios'
 const server_url = import.meta.env.VITE_SERVER_URL
+
+axios.defaults.withCredentials = true;
 export const AuthContext = createContext(null)
 export const AuthContextProvider = ({ children }) => {
   const [loggedIn, setLoggedIn] = useState(null)
