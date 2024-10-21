@@ -5,19 +5,21 @@ function About() {
         <div className="flex flex-col gap-6 w-1/3 ">
           <p className="text-4xl font-bold pt-12">About</p>
           <p className="text-2xl  text-white ">
-            This application was made for fun. Create trade offers and
-            screenshot to send to other players. All image credits go to Bee Swarm Simulator and Onett.
+            This application was made for a game i used to play, Bee Swawrm Simulator. Create trade offers and
+            screenshot to send to other players. All image credits go to Bee Swarm Simulator.
             
             <br></br>
             <br></br>
             Some new features of the site include:
+            <li>Discord Profile saving integration</li>
+            <li> Create trade offers on the site </li>
+            <li> Chat direct messages with others</li>
+            <li> Account details</li>
             <ul>
-              <li>- Searching</li>
-              <li>- Beequip details (Incomplete)</li>
-              <li>- Temporary save on close</li>
+    
             </ul>
             <br></br>
-            More features to come - <span className = "italic font-bold text-4xl">euwunha</span>
+            More features to come - <span className = "italic font-bold text-4xl"></span>
           </p>
           <a
             href="/"

@@ -22,7 +22,7 @@ function Navbar() {
         </div>
         <div className="flex col-span-3 flex-col  items-center">
           <a href="/" className="text-6xl font-bold cursor-pointer ">
-            Bees For Trade (beta)
+            Bees For Trade 
           </a>
 
           <div className="pt-6">

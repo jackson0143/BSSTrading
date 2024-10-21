@@ -566,7 +566,7 @@ function Home() {
         <p className="text-3xl  font-semibold mt-2">TRADE</p>
         <br></br>
         <p className="text-lg font-bold">beesfortrade.vercel.app </p>
-        <p className="text-sm mt-1">made by euwunha</p>
+        <p className="text-sm mt-1">made by me </p>
 
           <div className = "flex pt-3">
         <button
